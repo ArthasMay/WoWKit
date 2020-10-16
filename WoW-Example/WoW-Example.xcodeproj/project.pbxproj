@@ -10,7 +10,7 @@
 		E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805559425242A9B00FE33A4 /* RxReponderChain.swift */; };
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
-		E8719B3F25393A6300F9543A /* WoWKitConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWKitConstant.swift */; };
+		E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */; };
 		E887A74D253587AD00881066 /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887A74C253587AD00881066 /* CRC16.swift */; };
 		E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025925063D9C0093F7F6 /* AppDelegate.swift */; };
 		E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		E805559425242A9B00FE33A4 /* RxReponderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReponderChain.swift; sourceTree = "<group>"; };
-		E8719B3E25393A6300F9543A /* WoWKitConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWKitConstant.swift; sourceTree = "<group>"; };
+		E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVConstant.swift; sourceTree = "<group>"; };
 		E887A74C253587AD00881066 /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
 		E8BE025625063D9C0093F7F6 /* WoW-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BE025925063D9C0093F7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		E8607DCA2536F6D20020081F /* WoWFastKV */ = {
 			isa = PBXGroup;
 			children = (
-				E8719B3E25393A6300F9543A /* WoWKitConstant.swift */,
+				E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */,
 				E8F0C37F25346F8B003722CC /* WoWFKVPair.swift */,
 				E8F0C3792534504B003722CC /* WoWFastKV.swift */,
 			);
@@ -239,7 +239,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Silence;
 				TargetAttributes = {
 					E8BE025525063D9C0093F7F6 = {
@@ -304,7 +304,7 @@
 				E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */,
 				E887A74D253587AD00881066 /* CRC16.swift in Sources */,
 				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,
-				E8719B3F25393A6300F9543A /* WoWKitConstant.swift in Sources */,
+				E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */,
 				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +373,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -433,6 +434,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

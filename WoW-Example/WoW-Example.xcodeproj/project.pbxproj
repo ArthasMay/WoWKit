@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805559425242A9B00FE33A4 /* RxReponderChain.swift */; };
+		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
+		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
+		E8719B3F25393A6300F9543A /* WoWKitConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWKitConstant.swift */; };
+		E887A74D253587AD00881066 /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887A74C253587AD00881066 /* CRC16.swift */; };
+		E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025925063D9C0093F7F6 /* AppDelegate.swift */; };
+		E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */; };
+		E8BE025E25063D9C0093F7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025D25063D9C0093F7F6 /* ViewController.swift */; };
+		E8BE026125063D9C0093F7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BE025F25063D9C0093F7F6 /* Main.storyboard */; };
+		E8BE026325063D9D0093F7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BE026225063D9D0093F7F6 /* Assets.xcassets */; };
+		E8BE026625063D9D0093F7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BE026425063D9D0093F7F6 /* LaunchScreen.storyboard */; };
+		E8BE027125063D9D0093F7F6 /* WoW_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE027025063D9D0093F7F6 /* WoW_ExampleUITests.swift */; };
+		E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C3792534504B003722CC /* WoWFastKV.swift */; };
+		E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C37F25346F8B003722CC /* WoWFKVPair.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8BE026D25063D9D0093F7F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8BE024E25063D9C0093F7F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8BE025525063D9C0093F7F6;
+			remoteInfo = "WoW-Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E805559425242A9B00FE33A4 /* RxReponderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReponderChain.swift; sourceTree = "<group>"; };
+		E8719B3E25393A6300F9543A /* WoWKitConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWKitConstant.swift; sourceTree = "<group>"; };
+		E887A74C253587AD00881066 /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
+		E8BE025625063D9C0093F7F6 /* WoW-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BE025925063D9C0093F7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E8BE025D25063D9C0093F7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8BE026025063D9C0093F7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8BE026225063D9D0093F7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8BE026525063D9D0093F7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8BE026725063D9D0093F7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8BE026C25063D9D0093F7F6 /* WoW-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WoW-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BE027025063D9D0093F7F6 /* WoW_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoW_ExampleUITests.swift; sourceTree = "<group>"; };
+		E8BE027225063D9D0093F7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8F0C3792534504B003722CC /* WoWFastKV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFastKV.swift; sourceTree = "<group>"; };
+		E8F0C37F25346F8B003722CC /* WoWFKVPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVPair.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8BE025325063D9C0093F7F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E805559E253163F500FE33A4 /* RxCocoa in Frameworks */,
+				E805559C253163F500FE33A4 /* RxSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8BE026925063D9D0093F7F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E805558F2524296F00FE33A4 /* WoWKit */ = {
+			isa = PBXGroup;
+			children = (
+				E8607DC62536F6720020081F /* Utils */,
+				E8F0C37825345023003722CC /* ServiceLayer */,
+				E80555A12534040100FE33A4 /* WoWImageCache */,
+				E80555902524298E00FE33A4 /* DisplayLayer */,
+			);
+			path = WoWKit;
+			sourceTree = "<group>";
+		};
+		E80555902524298E00FE33A4 /* DisplayLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E8055591252429A000FE33A4 /* MiddleWare */,
+			);
+			path = DisplayLayer;
+			sourceTree = "<group>";
+		};
+		E8055591252429A000FE33A4 /* MiddleWare */ = {
+			isa = PBXGroup;
+			children = (
+				E8055593252429C600FE33A4 /* ResponderChain */,
+			);
+			path = MiddleWare;
+			sourceTree = "<group>";
+		};
+		E8055593252429C600FE33A4 /* ResponderChain */ = {
+			isa = PBXGroup;
+			children = (
+				E805559425242A9B00FE33A4 /* RxReponderChain.swift */,
+			);
+			path = ResponderChain;
+			sourceTree = "<group>";
+		};
+		E80555A12534040100FE33A4 /* WoWImageCache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WoWImageCache;
+			sourceTree = "<group>";
+		};
+		E8607DC62536F6720020081F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E8607DC72536F6960020081F /* Crypto */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E8607DC72536F6960020081F /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				E887A74C253587AD00881066 /* CRC16.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		E8607DCA2536F6D20020081F /* WoWFastKV */ = {
+			isa = PBXGroup;
+			children = (
+				E8719B3E25393A6300F9543A /* WoWKitConstant.swift */,
+				E8F0C37F25346F8B003722CC /* WoWFKVPair.swift */,
+				E8F0C3792534504B003722CC /* WoWFastKV.swift */,
+			);
+			path = WoWFastKV;
+			sourceTree = "<group>";
+		};
+		E8BE024D25063D9C0093F7F6 = {
+			isa = PBXGroup;
+			children = (
+				E805558F2524296F00FE33A4 /* WoWKit */,
+				E8BE025825063D9C0093F7F6 /* WoW-Example */,
+				E8BE026F25063D9D0093F7F6 /* WoW-ExampleUITests */,
+				E8BE025725063D9C0093F7F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8BE025725063D9C0093F7F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8BE025625063D9C0093F7F6 /* WoW-Example.app */,
+				E8BE026C25063D9D0093F7F6 /* WoW-ExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8BE025825063D9C0093F7F6 /* WoW-Example */ = {
+			isa = PBXGroup;
+			children = (
+				E8BE025925063D9C0093F7F6 /* AppDelegate.swift */,
+				E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */,
+				E8BE025D25063D9C0093F7F6 /* ViewController.swift */,
+				E8BE025F25063D9C0093F7F6 /* Main.storyboard */,
+				E8BE026225063D9D0093F7F6 /* Assets.xcassets */,
+				E8BE026425063D9D0093F7F6 /* LaunchScreen.storyboard */,
+				E8BE026725063D9D0093F7F6 /* Info.plist */,
+			);
+			path = "WoW-Example";
+			sourceTree = "<group>";
+		};
+		E8BE026F25063D9D0093F7F6 /* WoW-ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E8BE027025063D9D0093F7F6 /* WoW_ExampleUITests.swift */,
+				E8BE027225063D9D0093F7F6 /* Info.plist */,
+			);
+			path = "WoW-ExampleUITests";
+			sourceTree = "<group>";
+		};
+		E8F0C37825345023003722CC /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E8607DCA2536F6D20020081F /* WoWFastKV */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8BE025525063D9C0093F7F6 /* WoW-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8BE027525063D9D0093F7F6 /* Build configuration list for PBXNativeTarget "WoW-Example" */;
+			buildPhases = (
+				E8BE025225063D9C0093F7F6 /* Sources */,
+				E8BE025325063D9C0093F7F6 /* Frameworks */,
+				E8BE025425063D9C0093F7F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WoW-Example";
+			packageProductDependencies = (
+				E805559B253163F500FE33A4 /* RxSwift */,
+				E805559D253163F500FE33A4 /* RxCocoa */,
+			);
+			productName = "WoW-Example";
+			productReference = E8BE025625063D9C0093F7F6 /* WoW-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E8BE026B25063D9D0093F7F6 /* WoW-ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8BE027825063D9D0093F7F6 /* Build configuration list for PBXNativeTarget "WoW-ExampleUITests" */;
+			buildPhases = (
+				E8BE026825063D9D0093F7F6 /* Sources */,
+				E8BE026925063D9D0093F7F6 /* Frameworks */,
+				E8BE026A25063D9D0093F7F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8BE026E25063D9D0093F7F6 /* PBXTargetDependency */,
+			);
+			name = "WoW-ExampleUITests";
+			productName = "WoW-ExampleUITests";
+			productReference = E8BE026C25063D9D0093F7F6 /* WoW-ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8BE024E25063D9C0093F7F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = Silence;
+				TargetAttributes = {
+					E8BE025525063D9C0093F7F6 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					E8BE026B25063D9D0093F7F6 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = E8BE025525063D9C0093F7F6;
+					};
+				};
+			};
+			buildConfigurationList = E8BE025125063D9C0093F7F6 /* Build configuration list for PBXProject "WoW-Example" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E8BE024D25063D9C0093F7F6;
+			packageReferences = (
+				E805559A253163F500FE33A4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
+			productRefGroup = E8BE025725063D9C0093F7F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8BE025525063D9C0093F7F6 /* WoW-Example */,
+				E8BE026B25063D9D0093F7F6 /* WoW-ExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8BE025425063D9C0093F7F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8BE026625063D9D0093F7F6 /* LaunchScreen.storyboard in Resources */,
+				E8BE026325063D9D0093F7F6 /* Assets.xcassets in Resources */,
+				E8BE026125063D9C0093F7F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8BE026A25063D9D0093F7F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8BE025225063D9C0093F7F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */,
+				E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */,
+				E8BE025E25063D9C0093F7F6 /* ViewController.swift in Sources */,
+				E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */,
+				E887A74D253587AD00881066 /* CRC16.swift in Sources */,
+				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,
+				E8719B3F25393A6300F9543A /* WoWKitConstant.swift in Sources */,
+				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8BE026825063D9D0093F7F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8BE027125063D9D0093F7F6 /* WoW_ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E8BE026E25063D9D0093F7F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8BE025525063D9C0093F7F6 /* WoW-Example */;
+			targetProxy = E8BE026D25063D9D0093F7F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E8BE025F25063D9C0093F7F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8BE026025063D9C0093F7F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E8BE026425063D9D0093F7F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8BE026525063D9D0093F7F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8BE027325063D9D0093F7F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E8BE027425063D9D0093F7F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8BE027625063D9D0093F7F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				INFOPLIST_FILE = "WoW-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthasmay.www.WoW-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8BE027725063D9D0093F7F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				INFOPLIST_FILE = "WoW-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthasmay.www.WoW-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E8BE027925063D9D0093F7F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				INFOPLIST_FILE = "WoW-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthasmay.www.WoW-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WoW-Example";
+			};
+			name = Debug;
+		};
+		E8BE027A25063D9D0093F7F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				INFOPLIST_FILE = "WoW-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.arthasmay.www.WoW-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "WoW-Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8BE025125063D9C0093F7F6 /* Build configuration list for PBXProject "WoW-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8BE027325063D9D0093F7F6 /* Debug */,
+				E8BE027425063D9D0093F7F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8BE027525063D9D0093F7F6 /* Build configuration list for PBXNativeTarget "WoW-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8BE027625063D9D0093F7F6 /* Debug */,
+				E8BE027725063D9D0093F7F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8BE027825063D9D0093F7F6 /* Build configuration list for PBXNativeTarget "WoW-ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8BE027925063D9D0093F7F6 /* Debug */,
+				E8BE027A25063D9D0093F7F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E805559A253163F500FE33A4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E805559B253163F500FE33A4 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E805559A253163F500FE33A4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		E805559D253163F500FE33A4 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E805559A253163F500FE33A4 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E8BE024E25063D9C0093F7F6 /* Project object */;
+}

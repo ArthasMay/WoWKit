@@ -11,10 +11,11 @@
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
 		E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */; };
+		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
 		E887A74D253587AD00881066 /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887A74C253587AD00881066 /* CRC16.swift */; };
 		E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025925063D9C0093F7F6 /* AppDelegate.swift */; };
 		E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */; };
-		E8BE025E25063D9C0093F7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025D25063D9C0093F7F6 /* ViewController.swift */; };
+		E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025D25063D9C0093F7F6 /* ExampleViewController.swift */; };
 		E8BE026125063D9C0093F7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BE025F25063D9C0093F7F6 /* Main.storyboard */; };
 		E8BE026325063D9D0093F7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BE026225063D9D0093F7F6 /* Assets.xcassets */; };
 		E8BE026625063D9D0093F7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BE026425063D9D0093F7F6 /* LaunchScreen.storyboard */; };
@@ -36,11 +37,13 @@
 /* Begin PBXFileReference section */
 		E805559425242A9B00FE33A4 /* RxReponderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReponderChain.swift; sourceTree = "<group>"; };
 		E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVConstant.swift; sourceTree = "<group>"; };
+		E8719B4F253E87BB00F9543A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
 		E887A74C253587AD00881066 /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
 		E8BE025625063D9C0093F7F6 /* WoW-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BE025925063D9C0093F7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E8BE025D25063D9C0093F7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8BE025D25063D9C0093F7F6 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		E8BE026025063D9C0093F7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8BE026225063D9D0093F7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8BE026525063D9D0093F7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 				E8F0C37825345023003722CC /* ServiceLayer */,
 				E80555A12534040100FE33A4 /* WoWImageCache */,
 				E80555902524298E00FE33A4 /* DisplayLayer */,
+				E8719B4F253E87BB00F9543A /* README.md */,
 			);
 			path = WoWKit;
 			sourceTree = "<group>";
@@ -86,6 +90,7 @@
 		E80555902524298E00FE33A4 /* DisplayLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E8B7B934253E92130082BD87 /* Widgets */,
 				E8055591252429A000FE33A4 /* MiddleWare */,
 			);
 			path = DisplayLayer;
@@ -140,6 +145,21 @@
 			path = WoWFastKV;
 			sourceTree = "<group>";
 		};
+		E8719B4A253E867600F9543A /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		E8B7B934253E92130082BD87 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		E8BE024D25063D9C0093F7F6 = {
 			isa = PBXGroup;
 			children = (
@@ -162,9 +182,10 @@
 		E8BE025825063D9C0093F7F6 /* WoW-Example */ = {
 			isa = PBXGroup;
 			children = (
+				E8719B4A253E867600F9543A /* Examples */,
 				E8BE025925063D9C0093F7F6 /* AppDelegate.swift */,
 				E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */,
-				E8BE025D25063D9C0093F7F6 /* ViewController.swift */,
+				E8BE025D25063D9C0093F7F6 /* ExampleViewController.swift */,
 				E8BE025F25063D9C0093F7F6 /* Main.storyboard */,
 				E8BE026225063D9D0093F7F6 /* Assets.xcassets */,
 				E8BE026425063D9D0093F7F6 /* LaunchScreen.storyboard */,
@@ -300,12 +321,13 @@
 			files = (
 				E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */,
 				E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */,
-				E8BE025E25063D9C0093F7F6 /* ViewController.swift in Sources */,
+				E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */,
 				E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */,
 				E887A74D253587AD00881066 /* CRC16.swift in Sources */,
 				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,
 				E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */,
 				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
+				E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -453,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

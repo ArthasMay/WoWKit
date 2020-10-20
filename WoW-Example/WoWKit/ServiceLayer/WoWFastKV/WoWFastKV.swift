@@ -15,11 +15,13 @@ public enum WoWFastKVMemoryStrategy: UInt {
 }
 
 public final class WoWFastKV {
-    static let shared: WoWFastKV = {
+    static let `default`: WoWFastKV! = {
         var path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         path = path + "/default.fkv"
         return WoWFastKV(withFile: path, initialMemorySize: WoWFastDefaultInitialMMSize)
     }()
+    
+    public var headerInfo: String!
     
     private var fd: Int32 = 0
     private var mmPtr: UnsafeMutableRawPointer!
@@ -51,6 +53,7 @@ public final class WoWFastKV {
     }
     
     // MARK: - Private methods
+    @discardableResult
     private func open(file: String) -> Bool {
         pthread_mutex_lock(&mutex)
         
@@ -95,6 +98,8 @@ public final class WoWFastKV {
             return false
         }
         
+        headerInfo = "Mark: \(mark!)\n"
+        
         // read version
         ptr = ptr.advanced(by: 6)
         let versionPtr = bytes.withContiguousStorageIfAvailable {
@@ -105,7 +110,8 @@ public final class WoWFastKV {
             $0.pointee
         }
         if version != nil {
-            print(version!)
+//            print(version!)
+            headerInfo = headerInfo + "Version: \(version!)\n"
         }
         
         // read data length
@@ -126,6 +132,7 @@ public final class WoWFastKV {
             assert(false, "[WoWFastKV] Illegal file size")
             return false
         }
+        headerInfo = headerInfo + "DataLength: \(dataLength)"
         
         // read data
         ptr = ptr.advanced(by: 18)
@@ -163,6 +170,7 @@ public final class WoWFastKV {
         memcpy(ptr, dataLen_ptr, 8)
     }
     
+    @discardableResult
     private func mapWithSize(_ mapSize: size_t) -> Bool {
         let mmsize = max(mapSize, initialMMSize)
         mmPtr = mmap(nil, mmsize,  PROT_READ | PROT_WRITE, MAP_FILE | MAP_SHARED, fd, 0)
@@ -257,7 +265,230 @@ public final class WoWFastKV {
     }
     
     // MARK: - Public Methods(API)
+    public func bool(for key: String) -> Bool? {
+        var val: NSNumber?
+        if let kv = _item(for: key) {
+            val = _numberValue(for: kv)
+            if val == nil {
+                if kv.valueType == .isString, let numString = kv.stringValue {
+                    return (numString as NSString).boolValue
+                }
+            }
+        }
+        return val?.boolValue
+    }
     
+    public func integer(for key: String) -> Int? {
+        var val: NSNumber?
+        if let kv = _item(for: key) {
+            val = _numberValue(for: kv)
+            if val == nil {
+                if kv.valueType == .isString, let numString = kv.stringValue {
+                    return Int(numString)
+                }
+            }
+        }
+        return val?.intValue
+    }
+    
+    public func float(for key: String) -> Float? {
+        var val: NSNumber?
+        if let kv = _item(for: key) {
+            val = _numberValue(for: kv)
+            if val == nil {
+                if kv.valueType == .isString, let numString = kv.stringValue {
+                    return Float(numString)
+                }
+            }
+        }
+        return val?.floatValue
+    }
+    
+    
+    public func double(for key: String) -> Double? {
+        var val: NSNumber?
+        if let kv = _item(for: key) {
+            val = _numberValue(for: kv)
+            if val == nil {
+                if kv.valueType == .isString, let numString = kv.stringValue {
+                    return Double(numString) ?? 0
+                }
+            }
+        }
+        return val?.doubleValue ?? 0
+    }
+    
+    public func string(for key: String) -> String? {
+        return _item(for: key)?.stringValue
+    }
+    
+    public func object<C: NSObject>(of cls: C.Type, for key: String) -> AnyObject? where C: NSCoding {
+        guard let kv = _item(for: key),
+              let octype = _objcType(for: kv)
+        else {
+            return nil
+        }
+        
+        if CASE_CLASS(cls: cls, type: NSNumber.self) {
+            return _numberValue(for: kv)
+        }
+        
+        if CASE_CLASS(cls: cls, type: NSString.self) {
+            return kv.stringValue as NSString?
+        }
+
+        if CASE_CLASS(cls: cls, type: NSData.self) {
+            if kv.valueType == .isData {
+                return kv.binaryValue as AnyObject
+            }
+            return nil
+        }
+        
+        if CASE_CLASS(cls: cls, type: NSDate.self) {
+            if CASE_CLASS(cls: octype, type: NSDate.self) {
+                let val = _unarchiveValue(for: NSDate.self, from: kv)
+                if val == nil {
+                    if let numVal = _numberValue(for: kv) {
+                        return NSDate(timeIntervalSince1970: numVal.doubleValue)
+                    }
+                    return val
+                }
+            }
+            return nil
+        }
+        
+        if CASE_CLASS(cls: cls, type: NSURL.self) {
+            if CASE_CLASS(cls: octype, type: NSURL.self) {
+                let val = _unarchiveValue(for: NSDate.self, from: kv)
+                if val == nil && kv.valueType == .isString && kv.stringValue != nil {
+                    return NSURL(string: kv.stringValue!)
+                }
+                return val
+            }
+            return nil
+        }
+        
+        // 暂时不支持自定义NSCoding类型吧
+        return nil
+    }
+    
+    public func setBool(val: Bool, for key: String) {
+        let kv = WoWFKVPair(with: .isBool, objcType: WoWFastKVObjcClassNameNSNumber, key: key, version: WoWFastKVVersion)
+        kv.boolValue = val
+        append(kv)
+    }
+    
+    public func setInteger(val: Int, for key: String) {
+        let kv = WoWFKVPair(with: .isNil, objcType: WoWFastKVObjcClassNameNSNumber, key: key, version: WoWFastKVVersion)
+        if abs(val) > Int32.max {
+            kv.int64Value = Int64(val)
+            kv.valueType = .isInt64
+        } else {
+            kv.int32Value = Int32(val)
+            kv.valueType = .isInt32
+        }
+        append(kv)
+    }
+    
+    public func setFloat(val: Int, for key: String) {
+        let kv = WoWFKVPair(with: .isFloat, objcType: WoWFastKVObjcClassNameNSNumber, key: key, version: WoWFastKVVersion)
+        append(kv)
+    }
+    
+    public func setDouble(val: Int, for key: String) {
+        let kv = WoWFKVPair(with: .isDouble, objcType: WoWFastKVObjcClassNameNSNumber, key: key, version: WoWFastKVVersion)
+        append(kv)
+    }
+    
+//    public func setObject<O: NSObject>(obj: O?, for key: String) {
+//        guard let tObj = obj else {
+//            let kv = WoWFKVPair()
+//            kv.version = WoWFastKVVersion
+//            kv.valueType = .isNil
+//            kv.key = key
+//            append(kv)
+//            return
+//        }
+//
+//        let kv = WoWFKVPair()
+//        kv.version = WoWFastKVVersion
+//        kv.key = key
+//        kv.objcType = NSStringFromClass(O.Type as! AnyClass)
+//    }
+    
+    public func removeObject(for key: String) {
+        let kv = WoWFKVPair()
+        kv.version = WoWFastKVVersion
+        kv.valueType = .isRemoved
+        kv.key = key
+        self.append(kv)
+    }
+    
+    public func removeAllKeys() {
+        pthread_mutex_lock(&mutex)
+        dict.removeAll()
+        mapWithSize(initialMMSize)
+        resetHeaderWithContentSize(dataLength: 0)
+        pthread_mutex_unlock(&mutex)
+    }
+    
+    public func cleanUp() {
+        pthread_mutex_lock(&mutex)
+        if mmPtr != nil {
+            munmap(mmPtr, curSize)
+        }
+        if fd > 0 {
+            ftruncate(fd, off_t(curSize))
+            close(fd)
+        }
+        mmSize = 0
+        curSize = 0
+        dict.removeAll()
+        try? FileManager.default.removeItem(atPath: path)
+        if FileManager.default.createFile(atPath: path, contents: nil, attributes: nil) {
+            pthread_mutex_unlock(&mutex)
+            open(file: path)
+        }
+        pthread_mutex_unlock(&mutex)
+    }
+    
+    private func _item(for key: String) -> WoWFKVPair? {
+        pthread_mutex_lock(&mutex)
+        let kv = dict[key]
+        pthread_mutex_unlock(&mutex)
+        return kv
+    }
+        
+    private func _objcType<C: NSObject>(for kv: WoWFKVPair) -> C.Type? {
+        if let objcType = kv.objcType {
+            return NSClassFromString(objcType) as? C.Type
+        }
+        return nil
+    }
+    
+    private func _numberValue(for kv: WoWFKVPair) -> NSNumber? {
+        switch kv.valueType {
+        case .isBool: return NSNumber(booleanLiteral: kv.boolValue ?? false)
+        case .isInt32: return NSNumber(integerLiteral: Int(kv.int32Value ?? 0))
+        case .isInt64: return NSNumber(integerLiteral: Int(kv.int64Value ?? 0))
+        case .isFloat: return NSNumber(floatLiteral: Double(kv.floatValue ?? 0))
+        case .isDouble: return NSNumber(floatLiteral: kv.doubleValue ?? 0)
+        case .isData:
+            return self._unarchiveValue(for: NSNumber.self, from: kv)
+        default:
+            return nil
+        }
+    }
+    
+    private func _unarchiveValue<T>(for cls: T.Type, from kvItem: WoWFKVPair) -> T? where T: NSObject, T: NSCoding {
+        if kvItem.valueType == .isData, let data = kvItem.binaryValue {
+            if let val = try? NSKeyedUnarchiver.unarchivedObject(ofClass: cls, from: data) {
+                return val
+            }
+            return nil
+        }
+        return nil
+    }
 }
 
 fileprivate func FastKVStrategyDefaultAlloctionSize(with neededSize: size_t) -> size_t {
@@ -273,4 +504,7 @@ fileprivate func FastKVStrategy1AllocationSize(with neededSize: size_t) -> size_
     return allocationSize + neededSize
 }
 
+fileprivate func CASE_CLASS<C, T>(cls: C.Type, type: T.Type) -> Bool where C: NSObject, T: NSObject {
+    return cls == type || cls.isSubclass(of: type)
+}
 

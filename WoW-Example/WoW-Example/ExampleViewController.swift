@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ExampleViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 //        print(MemoryLayout<UInt16>.size)
 //        print(MemoryLayout<UInt32>.size)
 //        testData()
-        testCoding()
+//        testCoding()
     }
     
     func test(a: Int, b: Int?) {
@@ -84,19 +84,7 @@ class ViewController: UIViewController {
 
     
     func testCoding() {
-//        let kv = WoWFKVPair()
-//        kv.version = 1
-//        kv.valueType = .isBool
-//        kv.objcType = "NSNumber"
-//        kv.key = "testbool"
-//        kv.boolValue = true
-//
-//        let data = kv.representationData()
-//
-//        if let newkv = try? WoWFKVPair.parse(from: data) {
-//            print(newkv.key)
-//        }
-        let kv = WoWFastKV.shared
+        let kv = WoWFastKV.default
         
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class CRC16 {
     private var crcTable: [Int] = []
-    /// Seed, You should change this seed.
+    /// Seed: You should change this seed.
     private let gPloy = 0xA001
     
     static let instance = CRC16()

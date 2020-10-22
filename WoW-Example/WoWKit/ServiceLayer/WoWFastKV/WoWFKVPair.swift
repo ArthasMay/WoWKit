@@ -193,8 +193,15 @@ extension WoWFKVPair: WoWFKVCoding {
             let dataBytes = bytes[currentIndex..<currentIndex + dataLen]
             pair.stringValue = String(bytes: dataBytes, encoding: .utf8)
         case .isData:
-            var dataBytes = bytes[currentIndex..<currentIndex + dataLen]
-            pair.binaryValue = Data(bytes: &dataBytes, count: dataLen)
+//            let dataPtr = bytes.withContiguousStorageIfAvailable {
+//                (ptr: UnsafeBufferPointer<UInt8>) in
+//                return ptr.baseAddress! + currentIndex
+//            }
+//            // 这里传指针
+//            pair.binaryValue = Data(bytes: dataPtr!, count: dataLen)
+            // 这里两种方式获取
+            let dataBytes = bytes[currentIndex..<currentIndex + dataLen]
+            pair.binaryValue = Data(dataBytes)
         case .none:
             break
         }
@@ -423,11 +430,11 @@ extension WoWFKVPairList: WoWFKVCoding {
         var delimiterRange: Range<Int>?
         var splitStartIndex = 0
         while true {
-            delimiterRange = data.range(of: delimiterData, options: [], in: splitStartIndex..<len - splitStartIndex)
-            if delimiterRange == nil || delimiterRange?.isEmpty == nil || delimiterRange!.isEmpty == false {
+            delimiterRange = data.range(of: delimiterData, options: [], in: splitStartIndex..<len)
+            if delimiterRange == nil || delimiterRange?.isEmpty == nil || delimiterRange!.isEmpty == true {
                 break
             }
-            let kv = try? WoWFKVPair.parse(from: data.subdata(in: splitStartIndex..<len - delimiterRange!.lowerBound))
+            let kv = try? WoWFKVPair.parse(from: data.subdata(in: splitStartIndex..<delimiterRange!.lowerBound))
             if let kvItem = kv as? WoWFKVPair {
                 kvList.items.append(kvItem)
             }

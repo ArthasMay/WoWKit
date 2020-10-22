@@ -135,9 +135,8 @@ public final class WoWFastKV {
         headerInfo = headerInfo + "DataLength: \(dataLength)"
         
         // read data
-        ptr = ptr.advanced(by: 18)
         let valLength = min(dataLength, (__uint64_t)(statInfo.st_size) - (__uint64_t)(WoWFastKVHeaderSize))
-        let valData = Data(bytes: ptr, count: Int(valLength))
+        let valData = Data(bytes: mmPtr.advanced(by: 18), count: Int(valLength))
         
         guard let kvList = try? WoWFKVPairList.parse(from: valData) as? WoWFKVPairList else {
             pthread_mutex_unlock(&mutex)
@@ -322,53 +321,30 @@ public final class WoWFastKV {
         return _item(for: key)?.stringValue
     }
     
-    public func object<C: NSObject>(of cls: C.Type, for key: String) -> AnyObject? where C: NSCoding {
-        guard let kv = _item(for: key),
-              let octype = _objcType(for: kv)
-        else {
+    public func object(for key: String) -> Any? {
+        guard let kv = _item(for: key) else {
             return nil
         }
         
-        if CASE_CLASS(cls: cls, type: NSNumber.self) {
-            return _numberValue(for: kv)
+        if let numberVal = _numberValue(for: kv) {
+            return numberVal
         }
         
-        if CASE_CLASS(cls: cls, type: NSString.self) {
-            return kv.stringValue as NSString?
+        if let stringVal = kv.stringValue {
+            return stringVal
         }
-
-        if CASE_CLASS(cls: cls, type: NSData.self) {
-            if kv.valueType == .isData {
-                return kv.binaryValue as AnyObject
-            }
+        return nil
+    }
+    
+    public func codable<C: Codable>(for key: String) -> C? {
+        guard let kv = _item(for: key) else {
             return nil
         }
         
-        if CASE_CLASS(cls: cls, type: NSDate.self) {
-            if CASE_CLASS(cls: octype, type: NSDate.self) {
-                let val = _unarchiveValue(for: NSDate.self, from: kv)
-                if val == nil {
-                    if let numVal = _numberValue(for: kv) {
-                        return NSDate(timeIntervalSince1970: numVal.doubleValue)
-                    }
-                    return val
-                }
-            }
-            return nil
+        if let binaryVal = kv.binaryValue,
+           let codableItem = try? JSONDecoder().decode(C.self, from: binaryVal) {
+            return codableItem
         }
-        
-        if CASE_CLASS(cls: cls, type: NSURL.self) {
-            if CASE_CLASS(cls: octype, type: NSURL.self) {
-                let val = _unarchiveValue(for: NSDate.self, from: kv)
-                if val == nil && kv.valueType == .isString && kv.stringValue != nil {
-                    return NSURL(string: kv.stringValue!)
-                }
-                return val
-            }
-            return nil
-        }
-        
-        // 暂时不支持自定义NSCoding类型吧
         return nil
     }
     
@@ -390,31 +366,64 @@ public final class WoWFastKV {
         append(kv)
     }
     
-    public func setFloat(val: Int, for key: String) {
+    public func setFloat(val: Float, for key: String) {
         let kv = WoWFKVPair(with: .isFloat, objcType: WoWFastKVObjcClassNameNSNumber, key: key, version: WoWFastKVVersion)
+        kv.floatValue = val
         append(kv)
     }
     
-    public func setDouble(val: Int, for key: String) {
+    public func setDouble(val: Double, for key: String) {
         let kv = WoWFKVPair(with: .isDouble, objcType: WoWFastKVObjcClassNameNSNumber, key: key, version: WoWFastKVVersion)
+        kv.doubleValue = val
         append(kv)
     }
     
-//    public func setObject<O: NSObject>(obj: O?, for key: String) {
-//        guard let tObj = obj else {
-//            let kv = WoWFKVPair()
-//            kv.version = WoWFastKVVersion
-//            kv.valueType = .isNil
-//            kv.key = key
-//            append(kv)
-//            return
-//        }
-//
-//        let kv = WoWFKVPair()
-//        kv.version = WoWFastKVVersion
-//        kv.key = key
-//        kv.objcType = NSStringFromClass(O.Type as! AnyClass)
-//    }
+    public func setObject(obj: Any?, for key: String) {
+        guard let _ = obj else {
+            let kv = WoWFKVPair()
+            kv.version = WoWFastKVVersion
+            kv.valueType = .isNil
+            kv.key = key
+            append(kv)
+            return
+        }
+
+        let kv = WoWFKVPair()
+        kv.version = WoWFastKVVersion
+        kv.key = key
+        kv.objcType = String(describing: type(of: obj))
+        if let string = obj as? String {
+            kv.stringValue = string
+            kv.valueType = .isString
+        } else if let data = obj as? Data {
+            kv.binaryValue = data
+            kv.valueType = .isData
+        } else if let date = obj as? Date {
+            kv.doubleValue = date.timeIntervalSince1970
+            kv.valueType = .isDouble
+        } else if let url = obj as? URL {
+            kv.stringValue = url.absoluteString
+            kv.valueType = .isString
+        } else {
+            kv.valueType = .isNil
+        }
+        append(kv)
+    }
+    
+    public func setCodable<C: Codable>(obj: C, for key: String) {
+        let kv = WoWFKVPair()
+        kv.version = WoWFastKVVersion
+        kv.key = key
+        kv.objcType = String(describing: type(of: obj))
+        do {
+            let jsonData = try JSONEncoder().encode(obj)
+            kv.binaryValue = jsonData
+            kv.valueType = .isData
+        } catch {
+            
+        }
+        append(kv)
+    }
     
     public func removeObject(for key: String) {
         let kv = WoWFKVPair()

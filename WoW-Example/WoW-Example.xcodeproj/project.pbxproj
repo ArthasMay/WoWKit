@@ -13,6 +13,8 @@
 		E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */; };
 		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
 		E887A74D253587AD00881066 /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887A74C253587AD00881066 /* CRC16.swift */; };
+		E89AE43225415931009252EA /* benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AE43125415931009252EA /* benchmark.swift */; };
+		E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */; };
 		E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025925063D9C0093F7F6 /* AppDelegate.swift */; };
 		E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */; };
 		E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025D25063D9C0093F7F6 /* ExampleViewController.swift */; };
@@ -40,6 +42,8 @@
 		E8719B4F253E87BB00F9543A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
 		E887A74C253587AD00881066 /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
+		E89AE43125415931009252EA /* benchmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = benchmark.swift; sourceTree = "<group>"; };
+		E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKVCodableObject.swift; sourceTree = "<group>"; };
 		E8BE025625063D9C0093F7F6 /* WoW-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BE025925063D9C0093F7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BE025B25063D9C0093F7F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		E8607DC62536F6720020081F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E89AE43025415900009252EA /* APM */,
 				E8607DC72536F6960020081F /* Crypto */,
 			);
 			path = Utils;
@@ -148,9 +153,33 @@
 		E8719B4A253E867600F9543A /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */,
+				E89AE44225417BBC009252EA /* WoWFastKV-Example */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		E89AE43025415900009252EA /* APM */ = {
+			isa = PBXGroup;
+			children = (
+				E89AE43125415931009252EA /* benchmark.swift */,
+			);
+			name = APM;
+			sourceTree = "<group>";
+		};
+		E89AE44125417B9B009252EA /* WoWHybridPageKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WoWHybridPageKit;
+			sourceTree = "<group>";
+		};
+		E89AE44225417BBC009252EA /* WoWFastKV-Example */ = {
+			isa = PBXGroup;
+			children = (
+				E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */,
+				E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */,
+			);
+			path = "WoWFastKV-Example";
 			sourceTree = "<group>";
 		};
 		E8B7B934253E92130082BD87 /* Widgets */ = {
@@ -206,6 +235,7 @@
 		E8F0C37825345023003722CC /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E89AE44125417B9B009252EA /* WoWHybridPageKit */,
 				E8607DCA2536F6D20020081F /* WoWFastKV */,
 			);
 			path = ServiceLayer;
@@ -321,11 +351,13 @@
 			files = (
 				E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */,
 				E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */,
+				E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */,
 				E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */,
 				E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */,
 				E887A74D253587AD00881066 /* CRC16.swift in Sources */,
 				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,
 				E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */,
+				E89AE43225415931009252EA /* benchmark.swift in Sources */,
 				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
 				E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */,
 			);

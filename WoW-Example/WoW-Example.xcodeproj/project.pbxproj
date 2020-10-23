@@ -10,6 +10,10 @@
 		E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E805559425242A9B00FE33A4 /* RxReponderChain.swift */; };
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
+		E81DB52825418A9F009D13C1 /* WoWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52725418A9F009D13C1 /* WoWWebView.swift */; };
+		E81DB52F25427333009D13C1 /* WKWebView+WoWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52E25427333009D13C1 /* WKWebView+WoWExtension.swift */; };
+		E81DB53525427368009D13C1 /* WKWebView+WoWReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB53425427368009D13C1 /* WKWebView+WoWReusable.swift */; };
+		E86E09672542C2A500237F0C /* DispatchQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */; };
 		E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */; };
 		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
 		E887A74D253587AD00881066 /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887A74C253587AD00881066 /* CRC16.swift */; };
@@ -38,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		E805559425242A9B00FE33A4 /* RxReponderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReponderChain.swift; sourceTree = "<group>"; };
+		E81DB52725418A9F009D13C1 /* WoWWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWWebView.swift; sourceTree = "<group>"; };
+		E81DB52E25427333009D13C1 /* WKWebView+WoWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWExtension.swift"; sourceTree = "<group>"; };
+		E81DB53425427368009D13C1 /* WKWebView+WoWReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWReusable.swift"; sourceTree = "<group>"; };
+		E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Once.swift"; sourceTree = "<group>"; };
 		E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVConstant.swift; sourceTree = "<group>"; };
 		E8719B4F253E87BB00F9543A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +92,6 @@
 			children = (
 				E8607DC62536F6720020081F /* Utils */,
 				E8F0C37825345023003722CC /* ServiceLayer */,
-				E80555A12534040100FE33A4 /* WoWImageCache */,
 				E80555902524298E00FE33A4 /* DisplayLayer */,
 				E8719B4F253E87BB00F9543A /* README.md */,
 			);
@@ -126,6 +133,7 @@
 		E8607DC62536F6720020081F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E86E09652542C28500237F0C /* Extensions */,
 				E89AE43025415900009252EA /* APM */,
 				E8607DC72536F6960020081F /* Crypto */,
 			);
@@ -150,6 +158,14 @@
 			path = WoWFastKV;
 			sourceTree = "<group>";
 		};
+		E86E09652542C28500237F0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E8719B4A253E867600F9543A /* Examples */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +185,9 @@
 		E89AE44125417B9B009252EA /* WoWHybridPageKit */ = {
 			isa = PBXGroup;
 			children = (
+				E81DB52725418A9F009D13C1 /* WoWWebView.swift */,
+				E81DB52E25427333009D13C1 /* WKWebView+WoWExtension.swift */,
+				E81DB53425427368009D13C1 /* WKWebView+WoWReusable.swift */,
 			);
 			path = WoWHybridPageKit;
 			sourceTree = "<group>";
@@ -235,6 +254,7 @@
 		E8F0C37825345023003722CC /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E80555A12534040100FE33A4 /* WoWImageCache */,
 				E89AE44125417B9B009252EA /* WoWHybridPageKit */,
 				E8607DCA2536F6D20020081F /* WoWFastKV */,
 			);
@@ -349,14 +369,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E86E09672542C2A500237F0C /* DispatchQueue+Once.swift in Sources */,
 				E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */,
 				E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */,
 				E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */,
 				E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */,
 				E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */,
+				E81DB52825418A9F009D13C1 /* WoWWebView.swift in Sources */,
+				E81DB53525427368009D13C1 /* WKWebView+WoWReusable.swift in Sources */,
 				E887A74D253587AD00881066 /* CRC16.swift in Sources */,
 				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,
 				E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */,
+				E81DB52F25427333009D13C1 /* WKWebView+WoWExtension.swift in Sources */,
 				E89AE43225415931009252EA /* benchmark.swift in Sources */,
 				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
 				E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */,

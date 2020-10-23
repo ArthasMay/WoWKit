@@ -303,18 +303,17 @@ public final class WoWFastKV {
         return val?.floatValue
     }
     
-    
     public func double(for key: String) -> Double? {
         var val: NSNumber?
         if let kv = _item(for: key) {
             val = _numberValue(for: kv)
             if val == nil {
                 if kv.valueType == .isString, let numString = kv.stringValue {
-                    return Double(numString) ?? 0
+                    return Double(numString)
                 }
             }
         }
-        return val?.doubleValue ?? 0
+        return val?.doubleValue
     }
     
     public func string(for key: String) -> String? {

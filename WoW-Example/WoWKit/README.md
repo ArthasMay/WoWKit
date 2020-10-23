@@ -16,6 +16,8 @@ WoWFastKV 是基于FastKV的Swift实现，会在API封装、类型支持方面�
 ~~直接在Swift方面实现Codable的支持，OC 如果要使用的话用桥接的方式，Codable的自定义类型还是有问题~~
 2. 指针操作的代码重构
 3. 整体代码设计的重构
+4. 和UserDefaults设计统一的API层
+5. 参考FastImage等三方库，设计内存消耗低的网络图片缓存框架
 
 #### WoWNetwork
 基于 Moya 和 Rx的拓展
@@ -23,5 +25,10 @@ WoWFastKV 是基于FastKV的Swift实现，会在API封装、类型支持方面�
 #### WoWHybridPageKit
 基于WKWebView的封装 
 
+#### WoWHybridPageKit  TODO:
+1. Swift 对OC的runtime的操作需要重新整合下
+http://woodjobber.github.io/2019/01/30/Swift%E4%B9%8BSwizzle%20Method/
 
 
+##### Xcode 常用快捷键
+1. cmd + opt + <-/->  折叠代码块

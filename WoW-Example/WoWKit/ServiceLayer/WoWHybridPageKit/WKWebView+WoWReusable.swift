@@ -1,5 +1,5 @@
 //
-//  WKWebView+WoWReusable.swift
+// WKWebView+WoWReusable.swift
 //  WoW-Example
 //
 //  Created by Silence on 2020/10/23.
@@ -8,208 +8,99 @@
 
 import WebKit
 
-public typealias _WoWWebViewJSCompletionHandler = ((Any) -> Void)
-public enum ConfigUAType: NSInteger {
-    case replace = 0       // replace all UA string
-    case append            // append to original UA string
+protocol WoWReusableWebViewProtocol {
+    func componentViewWillLeavePool()
+    func componentViewWillEnterPool()
 }
 
-extension WKWebView {
-    // MARK: - Safe evaluate js
-    public func _safeAsyncEvaluateJavaScriptString(_ script: String, completionHandler: _WoWWebViewJSCompletionHandler? = nil) {
-        if Thread.current.isMainThread == false {
-            DispatchQueue.main.async { [weak self] in
-                // retain self
-                if let `self` = self {
-                    self._safeAsyncEvaluateJavaScriptString(script, completionHandler: completionHandler)
-                }
-            }
-            return
-        }
-        
-        if script.count <= 0 {
-            // TODO: 输出错误日志: 【WoWHybridPageKit】 Invalid script
-            if let cmpHandler = completionHandler {
-                cmpHandler("")
-            }
-            return
-        }
-        
-        self.evaluateJavaScript(script) { [weak self] (result, error) in
-            guard let `self` = self else { return }
-            let _ = self
-            var resultObj: Any = ""
-            if error != nil {
-                if result == nil || result is NSNull {
-                    resultObj = ""
-                } else if result is NSNumber {
-                    resultObj = "\((result as! NSNumber).stringValue)"
-                } else if result is NSObject {
-                    resultObj = result as! NSObject
-                } else {
-                    // TODO: 输出错误日志: 【WoWHybridPageKit】evaluate js return type:%@, js:%@
-                }
-            }
-            if let cmpHandler = completionHandler {
-                cmpHandler(resultObj)
-            } else {
-                // TODO: 输出错误日志: 【WoWHybridPageKit】evaluate js Error : %@
-                if let cmpHandler = completionHandler {
-                    cmpHandler("")
-                }
-            }
-        }
-    }
-    
-    // MARK: - Cookies
+/// 通过Extension实现了协议的默认方法，相当于实现了optional
+extension WoWReusableWebViewProtocol {
+    public func componentViewWillLeavePool() {}
+    public func componentViewWillEnterPool() {}
+}
+
+fileprivate class WoWWeakWrapper {
+    weak var weakObj: AnyObject?
+}
+
+extension WKWebView: WoWReusableWebViewProtocol {
     private struct AssociatedKeys {
-        static var AssociatedKey_CookieDic = "AssociatedKey_CookieDic"
+        static var holderObjectAssociateKey = "holderObjectAssociateKey"
+        static var reusedTimesAssociateKey  = "reusedTimesAssociateKey"
+        static var invalidAssociateKey      = "invalidAssociateKey"
     }
     
-    var cookieDic: [String: String]? {
-        set {
-            objc_setAssociatedObject(self, &AssociatedKeys.AssociatedKey_CookieDic, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+    weak var holderObject: AnyObject? {
         get {
-            objc_getAssociatedObject(self, &AssociatedKeys.AssociatedKey_CookieDic) as? [String: String]
-        }
-    }
-    
-    public func _setCookie(with name: String,
-                           value: String,
-                           domain: String? = nil,
-                           path: String? = nil,
-                           expiresDate: Date? = nil,
-                           completionHandler: _WoWWebViewJSCompletionHandler? = nil
-    ) {
-        guard name.count > 0 else {
-            return
-        }
-        
-        var cookieScript = "document.cookie='\(name)=\(value);"
-        if let tDomain = domain {
-            cookieScript = cookieScript + "domain=\(tDomain);"
-        }
-        if let tPath = path {
-            cookieScript = cookieScript + "path=\(tPath);"
-        }
-        
-        if cookieDic == nil {
-            cookieDic = [String: String]()
-        }
-        cookieDic![name] = cookieScript
-        
-        if let tExpiresDate = expiresDate, tExpiresDate.timeIntervalSince1970 != 0 {
-            cookieScript = cookieScript + "expires='+(new Date(\(tExpiresDate.timeIntervalSince1970 * 1000).toUTCString());"
-        } else {
-            cookieScript = cookieScript + "'"
-        }
-        cookieScript = cookieScript + "\n"
-        self._safeAsyncEvaluateJavaScriptString(cookieScript, completionHandler: completionHandler)
-    }
-    
-    public func _deleteCookie(with name: String, completionHandler: _WoWWebViewJSCompletionHandler? = nil) {
-        guard name.count > 0 else {
-            return
-        }
-        if cookieDic?.keys.contains(name) == false {
-            return
-        }
-        var cookieScript = ""
-        cookieScript = cookieScript + cookieDic![name]!
-        cookieScript = cookieScript + "expires='+(new Date(0).toUTCString());\n"
-        cookieDic?.removeValue(forKey: name)
-        self._safeAsyncEvaluateJavaScriptString(cookieScript, completionHandler: completionHandler)
-    }
-    
-    public var allCustiomCookies: Dictionary<String, String>.Keys? {
-        return cookieDic?.keys
-    }
-    
-    public func _deleteAllCustomCookies() {
-        allCustiomCookies?.forEach({
-            _deleteCookie(with: $0)
-        })
-    }
-    
-    
-    // MARK: - UA
-    @available(iOS 9.0, *)
-    public class func configCustomUA(with type: ConfigUAType, customUAString: String) {
-        guard customUAString.count > 0 else {
-            return
-        }
-        
-        if type == .replace {
-            let dictionary = ["UserAgent": customUAString]
-            UserDefaults.standard.register(defaults: dictionary)
-        } else if type == .append {
-            // 同步获取WebView的UserAgent
-            var originalUserAgent: String?
-            let webView = WKWebView()
-            let privateUASel = NSSelectorFromString("_" + "user" + "Agent")
-            if webView.responds(to: privateUASel) {
-                originalUserAgent = webView.perform(privateUASel).retain().takeRetainedValue() as? String
+            if let wrapObj = objc_getAssociatedObject(self, &AssociatedKeys.holderObjectAssociateKey) as? WoWWeakWrapper {
+                return wrapObj.weakObj
             }
-            
-            if let tOriginalUA = originalUserAgent {
-                let appUserAgent = tOriginalUA + "-" + customUAString
-                let dictionary = ["UserAgent": appUserAgent]
-                UserDefaults.standard.register(defaults: dictionary)
-            }
-        } else {
-            // TODO: 输出错误日志: 【WoWHybridPageKit】WKWebView (SyncConfigUA) config with invalid type :%@
+            return nil
         }
-    }
-    
-    // MARK: - Cache
-    public class func safeClearAllCache() {
-        let websiteDataTypes: Set = [
-            WKWebsiteDataTypeMemoryCache,
-            WKWebsiteDataTypeSessionStorage,
-            WKWebsiteDataTypeDiskCache,
-            WKWebsiteDataTypeOfflineWebApplicationCache,
-            WKWebsiteDataTypeCookies,
-            WKWebsiteDataTypeLocalStorage,
-            WKWebsiteDataTypeIndexedDBDatabases,
-            WKWebsiteDataTypeWebSQLDatabases
-        ]
-        let date = Date(timeIntervalSince1970: 0)
-        WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes, modifiedSince: date) {
-            // TODO: 【WoWHybridPageKit】("Clear All Cache Done")
-        }
-    }
-
-    // MARK: - Fix menu items
-    public class func fixWKWebViewMenuItems() {
-        DispatchQueue.once {
-            let cls: AnyClass? = NSClassFromString("W" + "K" + "Content" + "View")
-            if let tCls = cls {
-                let fixSel = #selector(self.canPerformAction(_:withSender:))
-                let method = class_getInstanceMethod(tCls, fixSel)
-                assert(method != nil, "Selector \(NSStringFromSelector(fixSel)) not found in %@ methods of class \(class_isMetaClass(tCls) ? "class" : "instance").")
-                let originalIMP = method_getImplementation(method!)
-                typealias originalImplementationType = @convention(c) (AnyObject, Selector, Selector, AnyObject) -> Bool
-                let originClosure: originalImplementationType = unsafeBitCast(originalIMP, to: originalImplementationType.self)
-                let newBlock: @convention(block) (Self, Selector, AnyObject) -> Bool = {
-                    (self, action, sender) in
-                    if action == #selector(self.cut(_:)) || action == #selector(self.copy(_:)) || action == #selector(self.paste(_:)) || action == #selector(self.delete(_:)) {
-                        return originClosure(self, fixSel, action, sender)
-                    } else {
-                        return false
-                    }
-                }
-
-                let newIMP = imp_implementationWithBlock(newBlock)
-                class_replaceMethod(tCls, fixSel, newIMP, method_getTypeEncoding(method!))
+        set {
+            if let wrapObj = objc_getAssociatedObject(self, &AssociatedKeys.holderObjectAssociateKey) as? WoWWeakWrapper {
+                wrapObj.weakObj = newValue
             } else {
-                // TODO: 输出错误日志: 【WoWHybridPageKit】WKWebView (DeleteMenuItems) can not find valid class
+                let wrapObj = WoWWeakWrapper()
+                wrapObj.weakObj = newValue
+                objc_setAssociatedObject(self, &AssociatedKeys.holderObjectAssociateKey, wrapObj, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }
     
-    // MARK: - Disable double click
-    public class func disableWebViewDoubleClick() {
-        
+    var reusedTimes: Int {
+        get {
+            if let reusedTimesNum = objc_getAssociatedObject(self, &AssociatedKeys.reusedTimesAssociateKey) as? NSNumber {
+                return reusedTimesNum.intValue
+            }
+            return 0
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.reusedTimesAssociateKey, NSNumber(integerLiteral: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    var invalid: Bool {
+        get {
+            if let invalidNum = objc_getAssociatedObject(self, &AssociatedKeys.invalidAssociateKey) as? NSNumber {
+                return invalidNum.boolValue
+            }
+            return false
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.invalidAssociateKey, NSNumber(booleanLiteral: newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    // MARK: - Clear backForwardList
+    func _clearBackForwardList() {
+        let sel = NSSelectorFromString("_re" + "moveA" + "llIte" + "ms")
+        if backForwardList.responds(to: sel) == true {
+            backForwardList.perform(sel)
+        }
+    }
+}
+
+/// WoWReusableWebViewProtocol
+extension WKWebView {
+    @objc
+    func componentViewWillLeavePool() {
+        reusedTimes = reusedTimes + 1;
+        _clearBackForwardList()
+    }
+    
+    @objc
+    func componentViewWillEnterPool() {
+        holderObject = nil
+        scrollView.delegate = nil
+        scrollView.isScrollEnabled = true
+        stopLoading()
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        let reuseLoadUrl = WoWHybridPageManager.shared.webViewReuseLoadUrl
+        if reuseLoadUrl.count > 0 {
+            self.load(URLRequest(url: URL(string: reuseLoadUrl)!))
+        } else {
+            self.loadHTMLString("", baseURL: nil)
+        }
     }
 }

@@ -57,6 +57,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="00E-jn-9qx" kind="show" id="XHK-VJ-7Bm"/>
+                                            <segue destination="00E-jn-9qx" kind="show" trigger="accessoryAction" id="Q5X-4j-2Do"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -71,6 +75,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Np1-LK-JQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="296" y="5"/>
+        </scene>
+        <!--Test WoWHPK View Controller-->
+        <scene sceneID="YV3-W9-ynh">
+            <objects>
+                <viewController id="00E-jn-9qx" customClass="TestWoWHPKViewController" customModule="WoW_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vnD-KT-g4o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="i4t-SG-F3K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ch4-uN-Dhh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xAN-S7-7nh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1330" y="423"/>
         </scene>
         <!--WoWFastKV-->
         <scene sceneID="IdU-Gg-noW">
@@ -415,6 +435,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="RCm-Rb-kqk"/>
+        <segue reference="XHK-VJ-7Bm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

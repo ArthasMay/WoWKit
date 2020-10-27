@@ -11,12 +11,17 @@
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
 		E81DB52825418A9F009D13C1 /* WoWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52725418A9F009D13C1 /* WoWWebView.swift */; };
-		E81DB52F25427333009D13C1 /* WKWebView+WoWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52E25427333009D13C1 /* WKWebView+WoWExtension.swift */; };
-		E81DB53525427368009D13C1 /* WKWebView+WoWReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB53425427368009D13C1 /* WKWebView+WoWReusable.swift */; };
+		E81DB52F25427333009D13C1 /* WKWebView+WoWReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52E25427333009D13C1 /* WKWebView+WoWReusable.swift */; };
+		E81DB53525427368009D13C1 /* WKWebView+WoWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB53425427368009D13C1 /* WKWebView+WoWExtension.swift */; };
 		E86E09672542C2A500237F0C /* DispatchQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */; };
 		E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */; };
 		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
 		E887A74D253587AD00881066 /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = E887A74C253587AD00881066 /* CRC16.swift */; };
+		E88BBA1C25469DBD005C9A64 /* WoWViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA1B25469DBD005C9A64 /* WoWViewProtocol.swift */; };
+		E88BBA612546AAED005C9A64 /* WKWebView+WoWDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA602546AAED005C9A64 /* WKWebView+WoWDelegateExtension.swift */; };
+		E88BBA652546AD6C005C9A64 /* WoWWebViewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA642546AD6C005C9A64 /* WoWWebViewPool.swift */; };
+		E88BBA692546BA1B005C9A64 /* WoWHybridPageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA682546BA1B005C9A64 /* WoWHybridPageManager.swift */; };
+		E88BBA702546CA3E005C9A64 /* TestWoWHPKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */; };
 		E89AE43225415931009252EA /* benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AE43125415931009252EA /* benchmark.swift */; };
 		E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */; };
 		E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE025925063D9C0093F7F6 /* AppDelegate.swift */; };
@@ -43,13 +48,18 @@
 /* Begin PBXFileReference section */
 		E805559425242A9B00FE33A4 /* RxReponderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReponderChain.swift; sourceTree = "<group>"; };
 		E81DB52725418A9F009D13C1 /* WoWWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWWebView.swift; sourceTree = "<group>"; };
-		E81DB52E25427333009D13C1 /* WKWebView+WoWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWExtension.swift"; sourceTree = "<group>"; };
-		E81DB53425427368009D13C1 /* WKWebView+WoWReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWReusable.swift"; sourceTree = "<group>"; };
+		E81DB52E25427333009D13C1 /* WKWebView+WoWReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWReusable.swift"; sourceTree = "<group>"; };
+		E81DB53425427368009D13C1 /* WKWebView+WoWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWExtension.swift"; sourceTree = "<group>"; };
 		E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Once.swift"; sourceTree = "<group>"; };
 		E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVConstant.swift; sourceTree = "<group>"; };
 		E8719B4F253E87BB00F9543A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
 		E887A74C253587AD00881066 /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
+		E88BBA1B25469DBD005C9A64 /* WoWViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWViewProtocol.swift; sourceTree = "<group>"; };
+		E88BBA602546AAED005C9A64 /* WKWebView+WoWDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWDelegateExtension.swift"; sourceTree = "<group>"; };
+		E88BBA642546AD6C005C9A64 /* WoWWebViewPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWWebViewPool.swift; sourceTree = "<group>"; };
+		E88BBA682546BA1B005C9A64 /* WoWHybridPageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWHybridPageManager.swift; sourceTree = "<group>"; };
+		E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWoWHPKViewController.swift; sourceTree = "<group>"; };
 		E89AE43125415931009252EA /* benchmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = benchmark.swift; sourceTree = "<group>"; };
 		E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKVCodableObject.swift; sourceTree = "<group>"; };
 		E8BE025625063D9C0093F7F6 /* WoW-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,9 +179,18 @@
 		E8719B4A253E867600F9543A /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				E88BBA6E2546C9AE005C9A64 /* WoWHybridKit-Example */,
 				E89AE44225417BBC009252EA /* WoWFastKV-Example */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		E88BBA6E2546C9AE005C9A64 /* WoWHybridKit-Example */ = {
+			isa = PBXGroup;
+			children = (
+				E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */,
+			);
+			path = "WoWHybridKit-Example";
 			sourceTree = "<group>";
 		};
 		E89AE43025415900009252EA /* APM */ = {
@@ -185,9 +204,13 @@
 		E89AE44125417B9B009252EA /* WoWHybridPageKit */ = {
 			isa = PBXGroup;
 			children = (
+				E88BBA682546BA1B005C9A64 /* WoWHybridPageManager.swift */,
+				E88BBA1B25469DBD005C9A64 /* WoWViewProtocol.swift */,
+				E88BBA642546AD6C005C9A64 /* WoWWebViewPool.swift */,
 				E81DB52725418A9F009D13C1 /* WoWWebView.swift */,
-				E81DB52E25427333009D13C1 /* WKWebView+WoWExtension.swift */,
-				E81DB53425427368009D13C1 /* WKWebView+WoWReusable.swift */,
+				E88BBA602546AAED005C9A64 /* WKWebView+WoWDelegateExtension.swift */,
+				E81DB53425427368009D13C1 /* WKWebView+WoWExtension.swift */,
+				E81DB52E25427333009D13C1 /* WKWebView+WoWReusable.swift */,
 			);
 			path = WoWHybridPageKit;
 			sourceTree = "<group>";
@@ -373,17 +396,22 @@
 				E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */,
 				E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */,
 				E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */,
+				E88BBA692546BA1B005C9A64 /* WoWHybridPageManager.swift in Sources */,
 				E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */,
 				E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */,
 				E81DB52825418A9F009D13C1 /* WoWWebView.swift in Sources */,
-				E81DB53525427368009D13C1 /* WKWebView+WoWReusable.swift in Sources */,
+				E81DB53525427368009D13C1 /* WKWebView+WoWExtension.swift in Sources */,
 				E887A74D253587AD00881066 /* CRC16.swift in Sources */,
 				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,
+				E88BBA1C25469DBD005C9A64 /* WoWViewProtocol.swift in Sources */,
 				E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */,
-				E81DB52F25427333009D13C1 /* WKWebView+WoWExtension.swift in Sources */,
+				E81DB52F25427333009D13C1 /* WKWebView+WoWReusable.swift in Sources */,
 				E89AE43225415931009252EA /* benchmark.swift in Sources */,
 				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
+				E88BBA702546CA3E005C9A64 /* TestWoWHPKViewController.swift in Sources */,
+				E88BBA612546AAED005C9A64 /* WKWebView+WoWDelegateExtension.swift in Sources */,
 				E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */,
+				E88BBA652546AD6C005C9A64 /* WoWWebViewPool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,14 @@ WoWFastKV 是基于FastKV的Swift实现，会在API封装、类型支持方面�
 1. Swift 对OC的runtime的操作需要重新整合下
 http://woodjobber.github.io/2019/01/30/Swift%E4%B9%8BSwizzle%20Method/
 
+#### WoWMiniKit
+WoWMiniKit 提供 App 运行简化微信小程序的能力
+
+##### 功能点
+1. 模拟运行微信小程序的能力
+2. 降级为离线的Single Page的H5，提高H5的加载渲染性能
+
+
 
 ##### Xcode 常用快捷键
 1. cmd + opt + <-/->  折叠代码块

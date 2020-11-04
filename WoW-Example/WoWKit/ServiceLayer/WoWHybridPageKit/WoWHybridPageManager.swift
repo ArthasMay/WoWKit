@@ -23,7 +23,7 @@ public class WoWHybridPageManager {
 }
 
 public extension WoWHybridPageManager {
-    func dequeueWebView<W: WoWWebView>(with webViewType: W.Type, webViewHolder: AnyObject) -> W {
+    func dequeueWebView<W: WoWWebView>(with webViewType: W.Type, webViewHolder: AnyObject?) -> W {
         return WoWWebViewPool.shared.dequeueWebView(class: webViewType, webViewHolder: webViewHolder)!
     }
     

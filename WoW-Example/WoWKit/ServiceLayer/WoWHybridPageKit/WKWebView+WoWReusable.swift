@@ -92,6 +92,7 @@ extension WKWebView {
     @objc
     func componentViewWillEnterPool() {
         holderObject = nil
+        navigationDelegate = nil
         scrollView.delegate = nil
         scrollView.isScrollEnabled = true
         stopLoading()
@@ -100,7 +101,9 @@ extension WKWebView {
         if reuseLoadUrl.count > 0 {
             self.load(URLRequest(url: URL(string: reuseLoadUrl)!))
         } else {
-            self.loadHTMLString("", baseURL: nil)
+            if let path = Bundle.main.path(forResource: "chase_loading", ofType: "html") {
+                self.load(URLRequest(url: URL(fileURLWithPath: path)))
+            }
         }
     }
 }

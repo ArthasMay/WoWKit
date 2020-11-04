@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preloadWoWWebViews()
         return true
+    }
+    
+    func preloadWoWWebViews() {
+        let webView = WoWHybridPageManager.shared.dequeueWebView(with: TestWebView.self, webViewHolder: nil)
+        WoWHybridPageManager.shared.enqueue(webView: webView)
     }
 
     // MARK: UISceneSession Lifecycle

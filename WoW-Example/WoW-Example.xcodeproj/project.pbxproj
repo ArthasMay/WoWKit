@@ -13,6 +13,14 @@
 		E81DB52825418A9F009D13C1 /* WoWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52725418A9F009D13C1 /* WoWWebView.swift */; };
 		E81DB52F25427333009D13C1 /* WKWebView+WoWReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB52E25427333009D13C1 /* WKWebView+WoWReusable.swift */; };
 		E81DB53525427368009D13C1 /* WKWebView+WoWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81DB53425427368009D13C1 /* WKWebView+WoWExtension.swift */; };
+		E81FA2DC254921F100C5298A /* chase.css in Resources */ = {isa = PBXBuildFile; fileRef = E81FA2D8254921F100C5298A /* chase.css */; };
+		E81FA2DD254921F100C5298A /* flash.css in Resources */ = {isa = PBXBuildFile; fileRef = E81FA2D9254921F100C5298A /* flash.css */; };
+		E81FA2DE254921F100C5298A /* flash_loading.html in Resources */ = {isa = PBXBuildFile; fileRef = E81FA2DA254921F100C5298A /* flash_loading.html */; };
+		E81FA2DF254921F100C5298A /* chase_loading.html in Resources */ = {isa = PBXBuildFile; fileRef = E81FA2DB254921F100C5298A /* chase_loading.html */; };
+		E8437A6D254BC499008924C5 /* error.html in Resources */ = {isa = PBXBuildFile; fileRef = E8437A6C254BC499008924C5 /* error.html */; };
+		E8437A71254BC4AE008924C5 /* error.css in Resources */ = {isa = PBXBuildFile; fileRef = E8437A70254BC4AE008924C5 /* error.css */; };
+		E85C9AFD2552A759000A03A7 /* WoWLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9AFC2552A759000A03A7 /* WoWLogger.swift */; };
+		E85C9B052552B29C000A03A7 /* TestMiniKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B042552B29C000A03A7 /* TestMiniKitViewController.swift */; };
 		E86E09672542C2A500237F0C /* DispatchQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */; };
 		E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */; };
 		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
@@ -33,6 +41,12 @@
 		E8BE027125063D9D0093F7F6 /* WoW_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BE027025063D9D0093F7F6 /* WoW_ExampleUITests.swift */; };
 		E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C3792534504B003722CC /* WoWFastKV.swift */; };
 		E8F0C38025346F8B003722CC /* WoWFKVPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C37F25346F8B003722CC /* WoWFKVPair.swift */; };
+		E8F4B0CA2549546E001844F0 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F4B0C82549546E001844F0 /* logo@3x.png */; };
+		E8F4B0CB2549546E001844F0 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F4B0C92549546E001844F0 /* logo@2x.png */; };
+		E8F4B0CF254956F9001844F0 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F4B0CE254956F8001844F0 /* logo.png */; };
+		E8F4B0DC25495BFA001844F0 /* logo_white2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F4B0DA25495BFA001844F0 /* logo_white2x.png */; };
+		E8F4B0DD25495BFA001844F0 /* logo_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F4B0DB25495BFA001844F0 /* logo_white@3x.png */; };
+		E8F4B0E125495C1B001844F0 /* logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = E8F4B0E025495C1B001844F0 /* logo_white.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +64,14 @@
 		E81DB52725418A9F009D13C1 /* WoWWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWWebView.swift; sourceTree = "<group>"; };
 		E81DB52E25427333009D13C1 /* WKWebView+WoWReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWReusable.swift"; sourceTree = "<group>"; };
 		E81DB53425427368009D13C1 /* WKWebView+WoWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+WoWExtension.swift"; sourceTree = "<group>"; };
+		E81FA2D8254921F100C5298A /* chase.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = chase.css; sourceTree = "<group>"; };
+		E81FA2D9254921F100C5298A /* flash.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = flash.css; sourceTree = "<group>"; };
+		E81FA2DA254921F100C5298A /* flash_loading.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = flash_loading.html; sourceTree = "<group>"; };
+		E81FA2DB254921F100C5298A /* chase_loading.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = chase_loading.html; sourceTree = "<group>"; };
+		E8437A6C254BC499008924C5 /* error.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = error.html; sourceTree = "<group>"; };
+		E8437A70254BC4AE008924C5 /* error.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = error.css; sourceTree = "<group>"; };
+		E85C9AFC2552A759000A03A7 /* WoWLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWLogger.swift; sourceTree = "<group>"; };
+		E85C9B042552B29C000A03A7 /* TestMiniKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMiniKitViewController.swift; sourceTree = "<group>"; };
 		E86E09662542C2A500237F0C /* DispatchQueue+Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Once.swift"; sourceTree = "<group>"; };
 		E8719B3E25393A6300F9543A /* WoWFKVConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVConstant.swift; sourceTree = "<group>"; };
 		E8719B4F253E87BB00F9543A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -75,6 +97,12 @@
 		E8BE027225063D9D0093F7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8F0C3792534504B003722CC /* WoWFastKV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFastKV.swift; sourceTree = "<group>"; };
 		E8F0C37F25346F8B003722CC /* WoWFKVPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFKVPair.swift; sourceTree = "<group>"; };
+		E8F4B0C82549546E001844F0 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
+		E8F4B0C92549546E001844F0 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		E8F4B0CE254956F8001844F0 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		E8F4B0DA25495BFA001844F0 /* logo_white2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_white2x.png; sourceTree = "<group>"; };
+		E8F4B0DB25495BFA001844F0 /* logo_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_white@3x.png"; sourceTree = "<group>"; };
+		E8F4B0E025495C1B001844F0 /* logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_white.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +168,67 @@
 			path = WoWImageCache;
 			sourceTree = "<group>";
 		};
+		E81FA2C925490CDB00C5298A /* WoWSource */ = {
+			isa = PBXGroup;
+			children = (
+				E8F4B0E025495C1B001844F0 /* logo_white.png */,
+				E8F4B0DA25495BFA001844F0 /* logo_white2x.png */,
+				E8F4B0DB25495BFA001844F0 /* logo_white@3x.png */,
+				E8F4B0CE254956F8001844F0 /* logo.png */,
+				E8F4B0C92549546E001844F0 /* logo@2x.png */,
+				E8F4B0C82549546E001844F0 /* logo@3x.png */,
+				E81FA2DB254921F100C5298A /* chase_loading.html */,
+				E81FA2D8254921F100C5298A /* chase.css */,
+				E81FA2DA254921F100C5298A /* flash_loading.html */,
+				E81FA2D9254921F100C5298A /* flash.css */,
+				E8437A6C254BC499008924C5 /* error.html */,
+				E8437A70254BC4AE008924C5 /* error.css */,
+			);
+			path = WoWSource;
+			sourceTree = "<group>";
+		};
+		E8437A69254BB2E8008924C5 /* WoWMiniKit */ = {
+			isa = PBXGroup;
+			children = (
+				E85C9AFA2552A577000A03A7 /* CoreModule */,
+			);
+			path = WoWMiniKit;
+			sourceTree = "<group>";
+		};
+		E85C9AFA2552A577000A03A7 /* CoreModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreModule;
+			sourceTree = "<group>";
+		};
+		E85C9AFB2552A700000A03A7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E85C9AFC2552A759000A03A7 /* WoWLogger.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E85C9B022552AF07000A03A7 /* WoWMiniKit-Example */ = {
+			isa = PBXGroup;
+			children = (
+				E85C9B042552B29C000A03A7 /* TestMiniKitViewController.swift */,
+			);
+			path = "WoWMiniKit-Example";
+			sourceTree = "<group>";
+		};
+		E85C9B032552B0FD000A03A7 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PageViewController;
+			sourceTree = "<group>";
+		};
 		E8607DC62536F6720020081F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E85C9AFB2552A700000A03A7 /* Tools */,
 				E86E09652542C28500237F0C /* Extensions */,
 				E89AE43025415900009252EA /* APM */,
 				E8607DC72536F6960020081F /* Crypto */,
@@ -179,6 +265,7 @@
 		E8719B4A253E867600F9543A /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				E85C9B022552AF07000A03A7 /* WoWMiniKit-Example */,
 				E88BBA6E2546C9AE005C9A64 /* WoWHybridKit-Example */,
 				E89AE44225417BBC009252EA /* WoWFastKV-Example */,
 			);
@@ -204,6 +291,7 @@
 		E89AE44125417B9B009252EA /* WoWHybridPageKit */ = {
 			isa = PBXGroup;
 			children = (
+				E81FA2C925490CDB00C5298A /* WoWSource */,
 				E88BBA682546BA1B005C9A64 /* WoWHybridPageManager.swift */,
 				E88BBA1B25469DBD005C9A64 /* WoWViewProtocol.swift */,
 				E88BBA642546AD6C005C9A64 /* WoWWebViewPool.swift */,
@@ -227,6 +315,7 @@
 		E8B7B934253E92130082BD87 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				E85C9B032552B0FD000A03A7 /* PageViewController */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -277,6 +366,7 @@
 		E8F0C37825345023003722CC /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				E8437A69254BB2E8008924C5 /* WoWMiniKit */,
 				E80555A12534040100FE33A4 /* WoWImageCache */,
 				E89AE44125417B9B009252EA /* WoWHybridPageKit */,
 				E8607DCA2536F6D20020081F /* WoWFastKV */,
@@ -372,9 +462,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F4B0DD25495BFA001844F0 /* logo_white@3x.png in Resources */,
+				E8F4B0DC25495BFA001844F0 /* logo_white2x.png in Resources */,
+				E81FA2DE254921F100C5298A /* flash_loading.html in Resources */,
+				E81FA2DC254921F100C5298A /* chase.css in Resources */,
 				E8BE026625063D9D0093F7F6 /* LaunchScreen.storyboard in Resources */,
+				E8F4B0CF254956F9001844F0 /* logo.png in Resources */,
 				E8BE026325063D9D0093F7F6 /* Assets.xcassets in Resources */,
+				E8F4B0CB2549546E001844F0 /* logo@2x.png in Resources */,
+				E81FA2DD254921F100C5298A /* flash.css in Resources */,
+				E81FA2DF254921F100C5298A /* chase_loading.html in Resources */,
 				E8BE026125063D9C0093F7F6 /* Main.storyboard in Resources */,
+				E8437A71254BC4AE008924C5 /* error.css in Resources */,
+				E8437A6D254BC499008924C5 /* error.html in Resources */,
+				E8F4B0CA2549546E001844F0 /* logo@3x.png in Resources */,
+				E8F4B0E125495C1B001844F0 /* logo_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +496,7 @@
 			files = (
 				E86E09672542C2A500237F0C /* DispatchQueue+Once.swift in Sources */,
 				E8F0C37A2534504B003722CC /* WoWFastKV.swift in Sources */,
+				E85C9B052552B29C000A03A7 /* TestMiniKitViewController.swift in Sources */,
 				E805559525242A9B00FE33A4 /* RxReponderChain.swift in Sources */,
 				E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */,
 				E88BBA692546BA1B005C9A64 /* WoWHybridPageManager.swift in Sources */,
@@ -406,6 +509,7 @@
 				E88BBA1C25469DBD005C9A64 /* WoWViewProtocol.swift in Sources */,
 				E8719B3F25393A6300F9543A /* WoWFKVConstant.swift in Sources */,
 				E81DB52F25427333009D13C1 /* WKWebView+WoWReusable.swift in Sources */,
+				E85C9AFD2552A759000A03A7 /* WoWLogger.swift in Sources */,
 				E89AE43225415931009252EA /* benchmark.swift in Sources */,
 				E8BE025C25063D9C0093F7F6 /* SceneDelegate.swift in Sources */,
 				E88BBA702546CA3E005C9A64 /* TestWoWHPKViewController.swift in Sources */,

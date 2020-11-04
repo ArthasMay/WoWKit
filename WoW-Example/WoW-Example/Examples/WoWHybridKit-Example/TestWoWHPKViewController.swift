@@ -6,7 +6,7 @@
 //  Copyright © 2020 Silence. All rights reserved.
 //
 
-import UIKit
+import WebKit
 
 class TestWebView: WoWWebView {}
 
@@ -21,6 +21,7 @@ class TestWoWHPKViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        logger.debug("Test logger")
         view.addSubview({
             webView = WoWHybridPageManager.shared.dequeueWebView(with: TestWebView.self, webViewHolder: self)
             let navH = (navigationController?.navigationBar.frame.height ?? 0) + 44
@@ -29,6 +30,7 @@ class TestWoWHPKViewController: UIViewController {
         }())
         
         webView.load(URLRequest(url: URL(string: "https://www.jianshu.com/p/7ba59affeaa2")!))
+        webView.navigationDelegate = self
         self.webView.scrollView.contentInsetAdjustmentBehavior = .never
     }
     
@@ -43,4 +45,23 @@ class TestWoWHPKViewController: UIViewController {
     }
     */
 
+}
+
+extension TestWoWHPKViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow);
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
+        webView.loadHTMLString("<p>页面暂时失去了踪迹!</p>", baseURL: nil)
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        webView.loadHTMLString("<p>页面暂时失去了踪迹!</p>", baseURL: nil)
+    }
 }

@@ -31,7 +31,7 @@ class WoWWebViewPool {
     
     // MARK: - Public Methods
     // 出列复用池：使用
-    public func dequeueWebView<W: WoWWebView>(class webViewClass: W.Type, webViewHolder: AnyObject) -> W? {
+    public func dequeueWebView<W: WoWWebView>(class webViewClass: W.Type, webViewHolder: AnyObject?) -> W? {
         guard webViewClass.isSubclass(of: WoWWebView.self) else {
 //            HPKErrorLog("HPKViewPool dequeue with invalid class:%@", webViewClass);
             return nil;

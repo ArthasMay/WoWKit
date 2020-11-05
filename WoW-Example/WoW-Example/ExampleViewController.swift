@@ -84,7 +84,7 @@ class ExampleViewController: UITableViewController {
 
     
     func testCoding() {
-        let kv = WoWFastKV.default
+//        let kv = WoWFastKV.default
         
     }
 }

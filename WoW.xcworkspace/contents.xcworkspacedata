@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:WoWKit/WoWKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WoW-Example/WoW-Example.xcodeproj">
    </FileRef>
 </Workspace>

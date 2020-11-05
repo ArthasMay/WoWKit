@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension DispatchQueue {
+public extension DispatchQueue {
     private static var _onceToken = [String]()
     
     class func once(token: String = "\(#file):\(#function):\(#line)", block: () -> Void) {

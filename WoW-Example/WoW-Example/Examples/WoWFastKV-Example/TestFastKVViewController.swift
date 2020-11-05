@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WoWFastKV
 
 class TestFastKVViewController: UIViewController {
 

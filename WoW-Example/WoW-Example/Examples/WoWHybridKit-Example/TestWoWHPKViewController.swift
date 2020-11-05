@@ -7,6 +7,8 @@
 //
 
 import WebKit
+import WoWKitDependency
+import WoWHybridPageKit
 
 class TestWebView: WoWWebView {}
 

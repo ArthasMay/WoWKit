@@ -7,6 +7,7 @@
 //
 
 import WebKit
+import WoWKitDependency
 
 public typealias _WoWWebViewJSCompletionHandler = ((Any) -> Void)
 public enum ConfigUAType: NSInteger {

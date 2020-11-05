@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WoWKitDependency
 
 public enum WoWFKVPairType: UInt {
     case isRemoved = 0

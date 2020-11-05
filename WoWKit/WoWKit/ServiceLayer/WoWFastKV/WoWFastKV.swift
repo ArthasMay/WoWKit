@@ -15,7 +15,7 @@ public enum WoWFastKVMemoryStrategy: UInt {
 }
 
 public final class WoWFastKV {
-    static let `default`: WoWFastKV! = {
+    public static let `default`: WoWFastKV! = {
         var path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         path = path + "/default.fkv"
         return WoWFastKV(withFile: path, initialMemorySize: WoWFastDefaultInitialMMSize)

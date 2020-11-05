@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WoWHybridPageKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

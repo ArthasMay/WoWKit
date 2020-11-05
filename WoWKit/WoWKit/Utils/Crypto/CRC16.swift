@@ -8,18 +8,18 @@
 
 import Foundation
 
-class CRC16 {
+public class CRC16 {
     private var crcTable: [Int] = []
     /// Seed: You should change this seed.
     private let gPloy = 0xA001
     
-    static let instance = CRC16()
+    public static let instance = CRC16()
     
     private init() {
         computeCrcTable()
     }
     
-    func getCRCResult(by data: [UInt8]) -> [UInt8] {
+    public func getCRCResult(by data: [UInt8]) -> [UInt8] {
         var crc = getCrc(data: data)
         var crcArr: [UInt8] = [0,0]
         for i in (0..<2).reversed() {
@@ -29,7 +29,7 @@ class CRC16 {
         return crcArr
     }
     
-    func getCRCResult(by stringData: String, using encoding: String.Encoding = .utf8) -> [UInt8]? {
+    public func getCRCResult(by stringData: String, using encoding: String.Encoding = .utf8) -> [UInt8]? {
         guard let data = stringData.data(using: encoding) else {
             return nil
         }
@@ -58,7 +58,7 @@ class CRC16 {
         return value
     }
     
-   func getCrc(data: [UInt8]) -> UInt16 {
+    public func getCrc(data: [UInt8]) -> UInt16 {
         var crc = 0
         let dataInt: [Int] = data.map{Int( $0) }
         let length = data.count

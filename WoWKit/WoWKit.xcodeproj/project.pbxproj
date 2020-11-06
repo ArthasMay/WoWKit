@@ -74,7 +74,7 @@
 		E85C9CC62553CB2B000A03A7 /* WoWKitDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85C9BCD2553A99B000A03A7 /* WoWKitDependency.framework */; };
 		E85C9CC72553CB31000A03A7 /* WoWKitDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E85C9BCD2553A99B000A03A7 /* WoWKitDependency.framework */; };
 		E85C9CD325540304000A03A7 /* WoWDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9CD225540304000A03A7 /* WoWDownloader.swift */; };
-		E85C9CD825540324000A03A7 /* WoWDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9CD725540324000A03A7 /* WoWDownloadTask.swift */; };
+		E85C9CD825540324000A03A7 /* WoWDownloadTaskWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9CD725540324000A03A7 /* WoWDownloadTaskWrapper.swift */; };
 		E85C9CDD25540349000A03A7 /* WoWFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9CDC25540349000A03A7 /* WoWFileUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +139,7 @@
 		E85C9C422553AE2D000A03A7 /* WoWHybridPageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WoWHybridPageKit.h; sourceTree = "<group>"; };
 		E85C9C432553AE2D000A03A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85C9CD225540304000A03A7 /* WoWDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDownloader.swift; sourceTree = "<group>"; };
-		E85C9CD725540324000A03A7 /* WoWDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDownloadTask.swift; sourceTree = "<group>"; };
+		E85C9CD725540324000A03A7 /* WoWDownloadTaskWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDownloadTaskWrapper.swift; sourceTree = "<group>"; };
 		E85C9CDC25540349000A03A7 /* WoWFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFileUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -426,7 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				E85C9CD225540304000A03A7 /* WoWDownloader.swift */,
-				E85C9CD725540324000A03A7 /* WoWDownloadTask.swift */,
+				E85C9CD725540324000A03A7 /* WoWDownloadTaskWrapper.swift */,
 				E85C9CDC25540349000A03A7 /* WoWFileUtils.swift */,
 			);
 			path = WoWDownloader;
@@ -669,7 +669,7 @@
 				E85C9BA12553A3F3000A03A7 /* WoWMPWebViewController.swift in Sources */,
 				E85C9B992553A3E5000A03A7 /* DispatchQueue+Once.swift in Sources */,
 				E85C9BB12553A417000A03A7 /* RxReponderChain.swift in Sources */,
-				E85C9CD825540324000A03A7 /* WoWDownloadTask.swift in Sources */,
+				E85C9CD825540324000A03A7 /* WoWDownloadTaskWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

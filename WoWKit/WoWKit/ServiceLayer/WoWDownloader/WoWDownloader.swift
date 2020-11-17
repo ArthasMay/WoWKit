@@ -25,7 +25,7 @@ final public class WoWDownloader: NSObject {
     // MARK: - Singleton
     public static let shared: WoWDownloader = {
         return WoWDownloader()
-    }
+    }()
     
     // MARK: - Public Methods
     public func dowloadFile(with request: URLRequest,
@@ -35,7 +35,7 @@ final public class WoWDownloader: NSObject {
                             onProgress progressClosure: DownloadProgressClosure? = nil,
                             onCompletion completionClosure: @escaping DownloadCompletionClosure) -> String? {
         if let _ = self.ongoingDownloads[(request.url?.absoluteString)!] {
-            debugPrint("【Download】Task: \(request.url?.absoluteString!) has already in progress.")
+            debugPrint("【Download】Task: \((request.url?.absoluteString)!) has already in progress.")
             return nil
         }
         
@@ -62,7 +62,7 @@ final public class WoWDownloader: NSObject {
     }
     
     public func cancelAllDownloads() {
-        self.ongoingDownloadss.forEach {
+        self.ongoingDownloads.forEach {
             let downloadTask = $1.downloadTask
             downloadTask.cancel()
         }
@@ -77,7 +77,7 @@ final public class WoWDownloader: NSObject {
         }
     }
     
-    public func isDownloadInProgress(for key: String?) {
+    public func isDownloadInProgress(for key: String?) -> Bool {
         let (isInProgress, _) = self.isDownloadInProgress(for: key)
         return isInProgress
     }
@@ -85,7 +85,7 @@ final public class WoWDownloader: NSObject {
     public func alterHandlersForOngoingDownload(
         for uniqueKey: String?,
         setProgress progressClosure: DownloadProgressClosure?,
-        setCompletion completionClosure: @escaping DownloadCompletionClosure?) {
+        setCompletion completionClosure: @escaping DownloadCompletionClosure) {
         let (presence, download) = self.isDownloadInProgress(for: uniqueKey)
         if presence == true, let download = download {
             download.progressClosure = progressClosure
@@ -98,8 +98,8 @@ final public class WoWDownloader: NSObject {
         super.init()
         let sessionConfiguration = URLSessionConfiguration.default
         self.session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
-        let backgroundConfiguration = URLSessionConfiguration.background(withIdentifier: Bundle.main.bundleIdentifier)
-        self.backgroundSession = URLSession(configuration: backgroundSession, delegate: self, delegateQueue: OperationQueue())
+        let backgroundConfiguration = URLSessionConfiguration.background(withIdentifier: Bundle.main.bundleIdentifier!)
+        self.backgroundSession = URLSession(configuration: backgroundConfiguration, delegate: self, delegateQueue: OperationQueue())
     }
     
     private func isDownloadInProgress(for uniqueKey: String?) -> (Bool, WoWDownloadTaskWrapper?) {
@@ -113,8 +113,111 @@ final public class WoWDownloader: NSObject {
         }
         return (false, nil)
     }
+    
+    private func showLocalNotification(with text: String) {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { (settings) in
+            guard settings.authorizationStatus == .authorized else {
+                debugPrint("【WoWDownloader】: Not authorized to schedule notification")
+                return
+            }
+            
+            let content = UNMutableNotificationContent()
+            content.title = text
+            content.sound = UNNotificationSound.default
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
+            let identifier = "WoWDownloadManagerNotification"
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            notificationCenter.add(request) { (error) in
+                if let error = error {
+                    debugPrint("【WoWDownloader】: Could not schedule notification, error : \(error)")
+                }
+            }
+        }
+    }
 }
 
-extension WoWDownloader: URLSessionDelegate, URLSessionDownloadDelegate {
+extension WoWDownloader: URLSessionDownloadDelegate {
+    // MARK: - Delegate
+    public func urlSession(_ session: URLSession,
+                           downloadTask: URLSessionDownloadTask,
+                           didFinishDownloadingTo location: URL) {
+        let key = (downloadTask.originalRequest?.url?.absoluteString)!
+        if let download = self.ongoingDownloads[key] {
+            if let response = downloadTask.response {
+                let statusCode = (response as! HTTPURLResponse).statusCode
+                
+                guard statusCode < 400 else {
+                    let err = NSError(domain: "HTTPError",
+                                      code: statusCode,
+                                      userInfo: [
+                                        NSLocalizedDescriptionKey: HTTPURLResponse.localizedString(forStatusCode: statusCode)
+                                      ])
+                    OperationQueue.main.addOperation({
+                        download.completionClosure(err, nil)
+                    })
+                    return
+                }
+                
+                let fileName = download.fileName ?? response.suggestedFilename ?? (downloadTask.originalRequest?.url?.lastPathComponent)!
+                let directory = download.directoryName
+                let (fileMoveOpIsSuccess, err, finalFileUrl) = WoWFileUtils.moveFile(from: location, toDirectory: directory, with: fileName)
+                OperationQueue.main.addOperation({
+                    (fileMoveOpIsSuccess ? download.completionClosure(nil, finalFileUrl) : download.completionClosure(err, nil))
+                })
+            }
+        }
+        self.ongoingDownloads.removeValue(forKey: key)
+    }
     
+    public func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didWriteData bytesWritten: Int64,
+                    totalBytesWritten: Int64,
+                    totalBytesExpectedToWrite: Int64) {
+        guard totalBytesExpectedToWrite > 0 else {
+            debugPrint("【WoWDownloader】: Could not calculate progress as totalBytesExpectedToWrite is less than 0")
+            return
+        }
+        
+        if let download = self.ongoingDownloads[(downloadTask.originalRequest?.url?.absoluteString)!],
+           let progressBlock = download.progressClosure {
+            let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+            OperationQueue.main.addOperation({
+                progressBlock(progress)
+            })
+        }
+    }
+    
+    public func urlSession(_ session: URLSession,
+                           task: URLSessionTask,
+                           didCompleteWithError error: Error?) {
+        if let error = error {
+            let downloadTask = task as! URLSessionDownloadTask
+            let key = (downloadTask.originalRequest?.url?.absoluteString)!
+            if let download = self.ongoingDownloads[key] {
+                OperationQueue.main.addOperation({
+                    download.completionClosure(error, nil)
+                })
+            }
+            self.ongoingDownloads.removeValue(forKey: key)
+        }
+    }
+    
+    public func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        session.getTasksWithCompletionHandler { (dataTasks, uploadTasks, downloadTasks) in
+            if let completion = self.backgroundCompletionHandler {
+                completion()
+            }
+            
+            if self.showLocalNotificationOnBackgroundDownloadDone {
+                var notificationText = "Download completed"
+                if let userNotificationText = self.localNotificationText {
+                    notificationText = userNotificationText
+                }
+                self.showLocalNotification(with: notificationText)
+            }
+            self.backgroundCompletionHandler = nil
+        }
+    }
 }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
-		E85C9B052552B29C000A03A7 /* TestMiniKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B042552B29C000A03A7 /* TestMiniKitViewController.swift */; };
+		E85C9B052552B29C000A03A7 /* TestMiniProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */; };
 		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
 		E88BBA702546CA3E005C9A64 /* TestWoWHPKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */; };
 		E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E85C9B042552B29C000A03A7 /* TestMiniKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMiniKitViewController.swift; sourceTree = "<group>"; };
+		E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMiniProgramViewController.swift; sourceTree = "<group>"; };
 		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
 		E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWoWHPKViewController.swift; sourceTree = "<group>"; };
 		E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKVCodableObject.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		E85C9B022552AF07000A03A7 /* WoWMiniKit-Example */ = {
 			isa = PBXGroup;
 			children = (
-				E85C9B042552B29C000A03A7 /* TestMiniKitViewController.swift */,
+				E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */,
 			);
 			path = "WoWMiniKit-Example";
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E85C9B052552B29C000A03A7 /* TestMiniKitViewController.swift in Sources */,
+				E85C9B052552B29C000A03A7 /* TestMiniProgramViewController.swift in Sources */,
 				E8B7B94A253FDD0B0082BD87 /* TestKVCodableObject.swift in Sources */,
 				E8BE025E25063D9C0093F7F6 /* ExampleViewController.swift in Sources */,
 				E8BE025A25063D9C0093F7F6 /* AppDelegate.swift in Sources */,

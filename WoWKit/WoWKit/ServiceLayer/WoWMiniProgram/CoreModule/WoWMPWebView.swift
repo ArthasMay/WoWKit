@@ -6,6 +6,7 @@
 //  Copyright © 2020 Silence. All rights reserved.
 //
 
-import UIKit
 
-class WoWMiniWebView: WoWWebView {}
+import WebKit
+
+class WoWMiniWebView: WKWebView {}

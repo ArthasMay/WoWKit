@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WoWKitDependency
 
 class WoWMiniWebViewController: UIViewController {
     static func createWebPage(appId: String, webviewId: Int) -> WoWMiniWebViewController {
@@ -53,5 +54,8 @@ class WoWMiniWebViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        PageLifeCycle.onAppear.
+    }
 }

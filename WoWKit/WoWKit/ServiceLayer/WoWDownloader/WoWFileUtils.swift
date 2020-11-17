@@ -9,10 +9,10 @@ import Foundation
 
 class WoWFileUtils {
     static func moveFile(from url: URL,
-                         to directory: String?,
+                         toDirectory: String?,
                          with name: String) -> (Bool, Error?, URL?) {
         var newUrl: URL
-        if let directory = directory {
+        if let directory = toDirectory {
             let directoryCreationResult = self.createDirectoryIfNotExists(with: directory)
             guard directoryCreationResult.0 else {
                 return (false, directoryCreationResult.1, nil)

@@ -93,7 +93,7 @@ public class WoWMPRunningBootstrap {
             }
             
             // 运行小程序
-            
+            WoWMPEngineContext.shared.launchApp(appId: appId)
         }
     }
 }

@@ -13,7 +13,7 @@ class JSInvokeNativeOption: Mappable {
     var appId: String?
     var isSync: Bool?
     var method: InvokeNativeMethod?
-    var webviewId: Int?
+    var webViewId: Int?
     var payload: Any?
 
     required init?(map: Map) {
@@ -24,7 +24,7 @@ class JSInvokeNativeOption: Mappable {
         sessionId <- map["sessionId"]
         isSync <- map["sync"]
         method <- map["method"]
-        webviewId <- map["webview"]
+        webViewId <- map["webView"]
         payload <- map["payload"]
         appId <- map["appId"]
     }
@@ -36,5 +36,14 @@ class JSInvokeNativeOption: Mappable {
             res = response
             callbacked = true
         })
+        
+        if !(isSync ?? false) {
+            return nil
+        }
+        
+        while !callbacked {
+            // no get response
+        }
+        return res
     }
 }

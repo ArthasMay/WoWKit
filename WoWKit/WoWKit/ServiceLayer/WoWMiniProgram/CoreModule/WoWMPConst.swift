@@ -43,7 +43,7 @@ enum PageLifeCycle {
     case onAppear
     case onReady
     case onDisappear
-    case onUpdate
+    case onUnload
 }
 
 enum InvokeNativeMethod: String {

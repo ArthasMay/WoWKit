@@ -42,7 +42,6 @@
 		E8A30169256248F600C4B387 /* WoWMiniProgram.h in Headers */ = {isa = PBXBuildFile; fileRef = E8A30167256248F600C4B387 /* WoWMiniProgram.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8A30170256248FC00C4B387 /* WoWMPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B702553A372000A03A7 /* WoWMPConst.swift */; };
 		E8A301742562490000C4B387 /* WoWMPRunningBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B712553A372000A03A7 /* WoWMPRunningBootstrap.swift */; };
-		E8A301782562490400C4B387 /* WoWMPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B722553A372000A03A7 /* WoWMPController.swift */; };
 		E8A3017C2562490800C4B387 /* WoWMPWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B732553A372000A03A7 /* WoWMPWebViewController.swift */; };
 		E8A3017D2562490800C4B387 /* WoWMPWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B742553A372000A03A7 /* WoWMPWebView.swift */; };
 		E8A301812562490C00C4B387 /* WoWFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9CDC25540349000A03A7 /* WoWFileUtils.swift */; };
@@ -60,6 +59,17 @@
 		E8A302242563C11000C4B387 /* JSBridge+setData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A3021C2563C0F100C4B387 /* JSBridge+setData.swift */; };
 		E8A302312563C80E00C4B387 /* WoWFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302292563C71C00C4B387 /* WoWFileReader.swift */; };
 		E8A3024E2563D37300C4B387 /* Dictionary+toJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302462563D22B00C4B387 /* Dictionary+toJSON.swift */; };
+		E8A3025E2563ED6800C4B387 /* PageLifeCycle+hook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302562563ECA100C4B387 /* PageLifeCycle+hook.swift */; };
+		E8A302632564C3EA00C4B387 /* WebViewInvokeNativeOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302622564C3EA00C4B387 /* WebViewInvokeNativeOption.swift */; };
+		E8A302692564C4BA00C4B387 /* WebViewJSBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302682564C4BA00C4B387 /* WebViewJSBridge.swift */; };
+		E8A302782564EB4600C4B387 /* URL+query.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A3026D2564CA8800C4B387 /* URL+query.swift */; };
+		E8A302832564F70600C4B387 /* JSBridge+console.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302822564F70600C4B387 /* JSBridge+console.swift */; };
+		E8A302882564F77400C4B387 /* JSBridge+launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302872564F77400C4B387 /* JSBridge+launch.swift */; };
+		E8A3028D2564F7F700C4B387 /* WebViewJSBridge+lifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A3028C2564F7F700C4B387 /* WebViewJSBridge+lifeCycle.swift */; };
+		E8A302922564F82600C4B387 /* WebViewJSBridge+log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302912564F82600C4B387 /* WebViewJSBridge+log.swift */; };
+		E8A302972564F85800C4B387 /* WebViewJSBridge+event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302962564F85800C4B387 /* WebViewJSBridge+event.swift */; };
+		E8A3029C25650D6900C4B387 /* JSBridge+router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A3029B25650D6900C4B387 /* JSBridge+router.swift */; };
+		E8A302A125650D8900C4B387 /* JSBridge+storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A302A025650D8900C4B387 /* JSBridge+storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,7 +97,6 @@
 		E85C9B6C2553A371000A03A7 /* RxReponderChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReponderChain.swift; sourceTree = "<group>"; };
 		E85C9B702553A372000A03A7 /* WoWMPConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWMPConst.swift; sourceTree = "<group>"; };
 		E85C9B712553A372000A03A7 /* WoWMPRunningBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWMPRunningBootstrap.swift; sourceTree = "<group>"; };
-		E85C9B722553A372000A03A7 /* WoWMPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWMPController.swift; sourceTree = "<group>"; };
 		E85C9B732553A372000A03A7 /* WoWMPWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWMPWebViewController.swift; sourceTree = "<group>"; };
 		E85C9B742553A372000A03A7 /* WoWMPWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWMPWebView.swift; sourceTree = "<group>"; };
 		E85C9B782553A372000A03A7 /* logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_white.png; sourceTree = "<group>"; };
@@ -137,6 +146,17 @@
 		E8A3021C2563C0F100C4B387 /* JSBridge+setData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+setData.swift"; sourceTree = "<group>"; };
 		E8A302292563C71C00C4B387 /* WoWFileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWFileReader.swift; sourceTree = "<group>"; };
 		E8A302462563D22B00C4B387 /* Dictionary+toJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+toJSON.swift"; sourceTree = "<group>"; };
+		E8A302562563ECA100C4B387 /* PageLifeCycle+hook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PageLifeCycle+hook.swift"; sourceTree = "<group>"; };
+		E8A302622564C3EA00C4B387 /* WebViewInvokeNativeOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewInvokeNativeOption.swift; sourceTree = "<group>"; };
+		E8A302682564C4BA00C4B387 /* WebViewJSBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewJSBridge.swift; sourceTree = "<group>"; };
+		E8A3026D2564CA8800C4B387 /* URL+query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+query.swift"; sourceTree = "<group>"; };
+		E8A302822564F70600C4B387 /* JSBridge+console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+console.swift"; sourceTree = "<group>"; };
+		E8A302872564F77400C4B387 /* JSBridge+launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+launch.swift"; sourceTree = "<group>"; };
+		E8A3028C2564F7F700C4B387 /* WebViewJSBridge+lifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewJSBridge+lifeCycle.swift"; sourceTree = "<group>"; };
+		E8A302912564F82600C4B387 /* WebViewJSBridge+log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewJSBridge+log.swift"; sourceTree = "<group>"; };
+		E8A302962564F85800C4B387 /* WebViewJSBridge+event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewJSBridge+event.swift"; sourceTree = "<group>"; };
+		E8A3029B25650D6900C4B387 /* JSBridge+router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+router.swift"; sourceTree = "<group>"; };
+		E8A302A025650D8900C4B387 /* JSBridge+storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSBridge+storage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,7 +333,6 @@
 				E85C9B712553A372000A03A7 /* WoWMPRunningBootstrap.swift */,
 				E8A301C12562814E00C4B387 /* WoWMPEngineContext.swift */,
 				E8A301CF256284CB00C4B387 /* WoWMPEngine.swift */,
-				E85C9B722553A372000A03A7 /* WoWMPController.swift */,
 				E85C9B732553A372000A03A7 /* WoWMPWebViewController.swift */,
 				E85C9B742553A372000A03A7 /* WoWMPWebView.swift */,
 			);
@@ -323,6 +342,7 @@
 		E85C9B762553A372000A03A7 /* WoWMiniProgram */ = {
 			isa = PBXGroup;
 			children = (
+				E8A302552563EC6900C4B387 /* PageLifeCycle */,
 				E85C9B752553A372000A03A7 /* CoreModule */,
 				E8A301E225636ED300C4B387 /* JSCExtention */,
 				E8A301D5256287CC00C4B387 /* Entities */,
@@ -461,6 +481,7 @@
 			children = (
 				E8A301D62562883500C4B387 /* JSContextWrapper.swift */,
 				E8A301EC25637F1400C4B387 /* JSInvokeNativeOption.swift */,
+				E8A302622564C3EA00C4B387 /* WebViewInvokeNativeOption.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -468,6 +489,7 @@
 		E8A301E225636ED300C4B387 /* JSCExtention */ = {
 			isa = PBXGroup;
 			children = (
+				E8A302672564C48800C4B387 /* WebViewExport */,
 				E8A301E325636EFE00C4B387 /* JSExport */,
 			);
 			path = JSCExtention;
@@ -478,6 +500,10 @@
 			children = (
 				E8A301E42563798700C4B387 /* JSBridge.swift */,
 				E8A3021C2563C0F100C4B387 /* JSBridge+setData.swift */,
+				E8A302822564F70600C4B387 /* JSBridge+console.swift */,
+				E8A302872564F77400C4B387 /* JSBridge+launch.swift */,
+				E8A3029B25650D6900C4B387 /* JSBridge+router.swift */,
+				E8A302A025650D8900C4B387 /* JSBridge+storage.swift */,
 			);
 			path = JSExport;
 			sourceTree = "<group>";
@@ -495,8 +521,28 @@
 			isa = PBXGroup;
 			children = (
 				E8A302462563D22B00C4B387 /* Dictionary+toJSON.swift */,
+				E8A3026D2564CA8800C4B387 /* URL+query.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E8A302552563EC6900C4B387 /* PageLifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				E8A302562563ECA100C4B387 /* PageLifeCycle+hook.swift */,
+			);
+			path = PageLifeCycle;
+			sourceTree = "<group>";
+		};
+		E8A302672564C48800C4B387 /* WebViewExport */ = {
+			isa = PBXGroup;
+			children = (
+				E8A302682564C4BA00C4B387 /* WebViewJSBridge.swift */,
+				E8A3028C2564F7F700C4B387 /* WebViewJSBridge+lifeCycle.swift */,
+				E8A302912564F82600C4B387 /* WebViewJSBridge+log.swift */,
+				E8A302962564F85800C4B387 /* WebViewJSBridge+event.swift */,
+			);
+			path = WebViewExport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -750,18 +796,28 @@
 				E8A302242563C11000C4B387 /* JSBridge+setData.swift in Sources */,
 				E8A301832562490C00C4B387 /* WoWDownloadTaskWrapper.swift in Sources */,
 				E8A3017D2562490800C4B387 /* WoWMPWebView.swift in Sources */,
+				E8A3028D2564F7F700C4B387 /* WebViewJSBridge+lifeCycle.swift in Sources */,
 				E8A30170256248FC00C4B387 /* WoWMPConst.swift in Sources */,
+				E8A302972564F85800C4B387 /* WebViewJSBridge+event.swift in Sources */,
+				E8A3025E2563ED6800C4B387 /* PageLifeCycle+hook.swift in Sources */,
 				E8A301822562490C00C4B387 /* WoWDownloader.swift in Sources */,
+				E8A3029C25650D6900C4B387 /* JSBridge+router.swift in Sources */,
+				E8A302782564EB4600C4B387 /* URL+query.swift in Sources */,
 				E8A301742562490000C4B387 /* WoWMPRunningBootstrap.swift in Sources */,
+				E8A302922564F82600C4B387 /* WebViewJSBridge+log.swift in Sources */,
+				E8A302882564F77400C4B387 /* JSBridge+launch.swift in Sources */,
+				E8A302832564F70600C4B387 /* JSBridge+console.swift in Sources */,
 				E8A3021825639DF500C4B387 /* JSBridge.swift in Sources */,
 				E8A301812562490C00C4B387 /* WoWFileUtils.swift in Sources */,
 				E8A3021125639DED00C4B387 /* JSInvokeNativeOption.swift in Sources */,
+				E8A302692564C4BA00C4B387 /* WebViewJSBridge.swift in Sources */,
+				E8A302A125650D8900C4B387 /* JSBridge+storage.swift in Sources */,
 				E8A301D0256284CB00C4B387 /* WoWMPEngine.swift in Sources */,
 				E8A302312563C80E00C4B387 /* WoWFileReader.swift in Sources */,
 				E8A301D72562883500C4B387 /* JSContextWrapper.swift in Sources */,
 				E8A3017C2562490800C4B387 /* WoWMPWebViewController.swift in Sources */,
+				E8A302632564C3EA00C4B387 /* WebViewInvokeNativeOption.swift in Sources */,
 				E8A301C22562814E00C4B387 /* WoWMPEngineContext.swift in Sources */,
-				E8A301782562490400C4B387 /* WoWMPController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

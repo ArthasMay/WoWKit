@@ -1,0 +1,9 @@
+{
+  "name": "mini-program-compiler",
+  "version": "1.0.0",
+  "description": "mini program的编译器",
+  "main": "index.js",
+  "repository": "https://www.arthas.com",
+  "author": "arthasmay",
+  "license": "MIT"
+}

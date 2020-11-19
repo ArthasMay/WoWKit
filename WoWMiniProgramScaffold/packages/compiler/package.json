@@ -5,5 +5,10 @@
   "main": "index.js",
   "repository": "https://www.arthas.com",
   "author": "arthasmay",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^8.1.7",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "posthtml": "^0.14.0"
+  }
 }

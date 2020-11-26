@@ -1,0 +1,41 @@
+{
+  "name": "@wowmp/runtime",
+  "version": "0.0.1",
+  "description": "Stencli Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/runtime/runtime.js",
+  "author": "Arthas",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "g": "npm run generate"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.12"
+  },
+  "devDependencies": {
+    "@stencil/core": "^2.3.0",
+    "@stencil/postcss": "^1.0.1",
+    "postcss-css-variables": "^0.17.0",
+    "postcss-hexrgba": "^2.0.1",
+    "postcss-pxtorem": "^5.1.1"
+  }
+}

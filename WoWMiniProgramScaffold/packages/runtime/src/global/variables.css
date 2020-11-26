@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #1aad19;
+  --primary-actived-color: #179b16;
+  --primary-disabled-color: #9ed99d;
+
+  --default-color: #f8f8f8;
+  --default-actived-color: #dedede;
+  --default-disabled-color: #f7f7f7;
+
+  --warn-color: #e64340;
+  --warn-disabled-color: #ec8b89;
+  --warn-actived-color: #ce3c39;
+
+  --app-primary-color: #488aff;
+
+  --black: #000000;
+  --white: #ffffff;
+}

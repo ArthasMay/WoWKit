@@ -8,11 +8,11 @@
 import JavaScriptCore
 import UIKit
 
-protocol JSBridgeExports: JSExport {
+@objc protocol JSBridgeExports: JSExport {
     static func invoke(_ payload: String) -> Any?
 }
 
-class JSBridge: JSBridgeExports {
+class JSBridge: NSObject, JSBridgeExports {
     class func invoke(_ payload: String) -> Any? {
         let invokeOption = JSInvokeNativeOption(JSONString: payload)
         return invokeOption?.invoke()

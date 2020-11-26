@@ -32,7 +32,7 @@ class WoWMPEngine {
         
         JSCContext = JSContextWrapper(javaScriptContent: scriptContent)
         createWebView()
-        JSCContext.invoke(payload: JSContextPayload(type: .callInitial, payload: ["webViewId": uid]))
+        JSCContext.invoke(payload: JSContextPayload(type: .callInitial, payload: ["webviewId": uid]))
     }
     
     private func createWebView() {
@@ -46,7 +46,7 @@ class WoWMPEngine {
     
     private func pushWebView(pagePath: String) {
         let miniProgramEngine = WoWMPEngineContext.shared.getMiniProgramEngine(appId: self.appId)
-        let payload = JSContextPayload(type: .callPushRouter, payload: ["webViewId": uid - 1, "pageId": pagePath])
+        let payload = JSContextPayload(type: .callPushRouter, payload: ["webviewId": uid - 1, "pageId": pagePath])
         miniProgramEngine?.JSCContext.invoke(payload: payload)
         routeStack.last!.load(pagePath: pagePath)
     }

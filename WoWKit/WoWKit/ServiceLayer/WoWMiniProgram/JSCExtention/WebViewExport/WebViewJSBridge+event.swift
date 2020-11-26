@@ -26,9 +26,9 @@ extension WebViewInvokeNative {
         let eventPayload = WVJSEventPayload(JSON: option.payload as? [String: Any] ?? [:])
         let mpEngine = WoWMPEngineContext.shared.getMiniProgramEngine(appId: target.appId)
         let payload = [
-            "lifeCycle": eventPayload?.method,
+            "lifecycle": eventPayload?.method,
             "payload": eventPayload?.payload,
-            "webViewId": target.webViewId
+            "webviewId": target.webViewId
         ]
         let jscPayload = JSContextPayload(type: .callPageLifeCycle, payload: payload as [String: Any])
         mpEngine?.JSCContext.invoke(payload: jscPayload)

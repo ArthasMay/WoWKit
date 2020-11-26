@@ -35,7 +35,7 @@ class JSContextWrapper {
             logger.error("JS Error: \(exception?.toString() ?? "No Error."):\(String(describing: sourcemap?["line"] ?? "")):\(String(describing: sourcemap?["column"] ?? ""))")
         }
         context.evaluateScript("console.log('Hello, WoWMiniProgram!')")
-        context.setObject(JSBridge.self, forKeyedSubscript: "__JSCB" as NSCopying & NSObjectProtocol)
+        context.setObject(JSBridge.self, forKeyedSubscript: "__JSB" as NSCopying & NSObjectProtocol)
         let script = "\(prefixScript)\(javaScriptContent)\(suffixScript)"
         context.evaluateScript(script)
         self.context = context

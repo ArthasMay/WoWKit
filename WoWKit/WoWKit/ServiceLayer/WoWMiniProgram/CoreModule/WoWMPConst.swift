@@ -9,6 +9,7 @@
 import Foundation
 import WoWKitDependency
 
+
 enum WoWMPConfig {
     static let miniProgramDir = WoWFileSystem.homeDirectory.appending("/Documents/MiniPrograme/")
     static let libraryDir = WoWFileSystem.homeDirectory.appending("/Documents/library/")

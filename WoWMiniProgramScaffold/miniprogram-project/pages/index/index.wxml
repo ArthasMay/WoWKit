@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}?q=1" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  
+  <view class="usermotto">
+    <text class="user-motto">司职: {{motto}}</text>
+  </view>
+
+  <view class="userdesc">
+    <text class="user-desc">简介:   {{desc}}</text>
+  </view>
+
+  <view class="userhot">
+    <text class="user-hot">人气: {{count}}</text>
+    <view class="button-groups">
+      <button bindtap="add" data-id="123" type="primary">添加</button>
+      <button bindtap="reduce" type="warn">减少</button>
+    </view>
+  </view>
+</view>

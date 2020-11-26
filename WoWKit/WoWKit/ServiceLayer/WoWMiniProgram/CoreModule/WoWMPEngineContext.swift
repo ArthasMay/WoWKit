@@ -30,7 +30,7 @@ class WoWMPEngineContext {
         logger.info("【WoWMPEngineContext】: 当前打开的MiniProgram \(appId)")
         var miniprogram: WoWMPEngine? = ref[appId]
         if miniprogram == nil {
-            miniprogram = getMiniProgramEngine(appId: appId)
+            miniprogram = WoWMPEngine(appId: appId)
         }
         
         // TODO: 1.运行的小程序超过最大设置值, LRU淘汰 2.内存收到警告，清除后台小程序

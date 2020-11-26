@@ -7,11 +7,28 @@
 //
 
 import UIKit
-import JavaScriptCore
+import WoWMiniProgram
+import WoWKitDependency
 
 class TestMiniProgramViewController: UIViewController {
+    
+    @IBOutlet weak var appIdTF: UITextField!
+    @IBOutlet weak var urlTF: UITextField!
+    
     override func viewDidLoad() {
-        let context1 = JSContext()
-        let context2 = JSContext()
+        appIdTF.text = "wxc8ecefecf650b4ff"
+        urlTF.text = "http://localhost:8001/"
+    }
+    
+    @IBAction func runDemo(_ sender: Any) {
+        guard let urlStr = urlTF.text, let appId = appIdTF.text else {
+            logger.error("【MPDemo】：MiniProgram资源配置错误！")
+            return
+        }
+        
+        let mpZipUrlStr = urlStr.appending(appId).appending(".zip")
+        let mpZipUrl = URL(string: mpZipUrlStr)!
+        
+        WoWMPRunningBootstrap().run(appId, mpZipUrl);
     }
 }

@@ -24,6 +24,8 @@ public class WoWMPRunningBootstrap {
         return WoWMPConfig.miniProgramDir.appending(appId)
     }
     
+    public init() {}
+    
     /// 下载 MiniProgram 的资源代码
     /// - Parameters:
     ///   - mppURL: MiniProgramPackageURL  小程序资源包地址

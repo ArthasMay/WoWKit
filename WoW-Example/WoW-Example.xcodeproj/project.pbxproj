@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
+		E8286F0B256E0D7C00598C7C /* WoWFastKV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8286F0A256E0D7C00598C7C /* WoWFastKV.framework */; };
+		E8286F0D256E0D7C00598C7C /* WoWHybridPageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8286F0C256E0D7C00598C7C /* WoWHybridPageKit.framework */; };
+		E8286F0F256E0D7C00598C7C /* WoWKitDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8286F0E256E0D7C00598C7C /* WoWKitDependency.framework */; };
+		E8286F11256E0D7C00598C7C /* WoWMiniProgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8286F10256E0D7C00598C7C /* WoWMiniProgram.framework */; };
 		E85C9B052552B29C000A03A7 /* TestMiniProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */; };
 		E8719B55253E8C3D00F9543A /* TestFastKVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */; };
 		E88BBA702546CA3E005C9A64 /* TestWoWHPKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */; };
@@ -46,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E8286F0A256E0D7C00598C7C /* WoWFastKV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWFastKV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8286F0C256E0D7C00598C7C /* WoWHybridPageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWHybridPageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8286F0E256E0D7C00598C7C /* WoWKitDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWKitDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8286F10256E0D7C00598C7C /* WoWMiniProgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWMiniProgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMiniProgramViewController.swift; sourceTree = "<group>"; };
 		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
 		E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWoWHPKViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8286F0B256E0D7C00598C7C /* WoWFastKV.framework in Frameworks */,
+				E8286F0D256E0D7C00598C7C /* WoWHybridPageKit.framework in Frameworks */,
+				E8286F0F256E0D7C00598C7C /* WoWKitDependency.framework in Frameworks */,
+				E8286F11256E0D7C00598C7C /* WoWMiniProgram.framework in Frameworks */,
 				E805559E253163F500FE33A4 /* RxCocoa in Frameworks */,
 				E805559C253163F500FE33A4 /* RxSwift in Frameworks */,
 			);
@@ -94,6 +106,10 @@
 		E85C9BC02553A504000A03A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8286F0A256E0D7C00598C7C /* WoWFastKV.framework */,
+				E8286F0C256E0D7C00598C7C /* WoWHybridPageKit.framework */,
+				E8286F0E256E0D7C00598C7C /* WoWKitDependency.framework */,
+				E8286F10256E0D7C00598C7C /* WoWMiniProgram.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

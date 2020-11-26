@@ -33,7 +33,7 @@ extension PageLifeCycle {
     }
     
     private func createPayload(_ webViewController: WoWMiniWebViewController, _ lifeCycle: String, _ payload: Any? = nil) -> JSContextPayload {
-        return .init(type: .callPageLifeCycle, payload: ["lifeCycle": lifeCycle, "webViewId": webViewController.webViewId, "payload": payload ?? ""])
+        return .init(type: .callPageLifeCycle, payload: ["lifecycle": lifeCycle, "webviewId": webViewController.webViewId, "payload": payload ?? ""])
     }
     
     private func callOnLoad(miniProgramEngine: WoWMPEngine, webViewController: WoWMiniWebViewController) {

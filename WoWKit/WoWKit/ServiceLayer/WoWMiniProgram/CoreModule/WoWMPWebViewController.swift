@@ -51,6 +51,7 @@ class WoWMiniWebViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // 设置特定的导航栏
+        customMPStyleNavBar()
         
         let preferences = WKPreferences()
         preferences.javaScriptEnabled = true

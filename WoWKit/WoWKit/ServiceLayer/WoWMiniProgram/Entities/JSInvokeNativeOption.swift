@@ -24,7 +24,7 @@ class JSInvokeNativeOption: Mappable {
         sessionId <- map["sessionId"]
         isSync <- map["sync"]
         method <- map["method"]
-        webViewId <- map["webView"]
+        webViewId <- map["webviewId"]
         payload <- map["payload"]
         appId <- map["appId"]
     }

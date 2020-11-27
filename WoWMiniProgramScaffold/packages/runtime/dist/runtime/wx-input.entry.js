@@ -1,4 +1,4 @@
-import { r as registerInstance, h, e as Host } from "./index-86fbaafa.js";
+import { r as registerInstance, h, e as Host } from './index-86fbaafa.js';
 
 const wxInputCss = ":host{display:block}";
 
@@ -7,7 +7,7 @@ const WxInput = class {
     registerInstance(this, hostRef);
   }
   render() {
-    return h(Host, null, h("input", { value: this.value }));
+    return (h(Host, null, h("input", { value: this.value })));
   }
 };
 WxInput.style = wxInputCss;

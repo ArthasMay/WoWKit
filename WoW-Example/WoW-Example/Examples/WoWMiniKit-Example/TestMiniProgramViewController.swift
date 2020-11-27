@@ -16,8 +16,8 @@ class TestMiniProgramViewController: UIViewController {
     @IBOutlet weak var urlTF: UITextField!
     
     override func viewDidLoad() {
-        appIdTF.text = "wxc8ecefecf650b4ff"
-        urlTF.text = "http://localhost:8001/"
+        appIdTF.text = "wxe158997d136c164e"
+        urlTF.text = "http://10.253.36.19:8001/"
     }
     
     @IBAction func runDemo(_ sender: Any) {

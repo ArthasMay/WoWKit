@@ -1,4 +1,4 @@
-import { r as registerInstance, h, e as Host } from "./index-86fbaafa.js";
+import { r as registerInstance, h, e as Host } from './index-86fbaafa.js';
 
 const baseComponentCss = ":host{display:block}";
 
@@ -9,24 +9,20 @@ const baseComponentCss = ":host{display:block}";
  */
 function eventToNative(bindFunctionName, payload) {
   const webkit = Reflect.get(window, "webkit");
-  webkit.messageHandlers.triggerEvent.postMessage(
-    JSON.stringify({
-      method: bindFunctionName,
-      payload
-    })
-  );
+  webkit.messageHandlers.triggerEvent.postMessage(JSON.stringify({
+    method: bindFunctionName,
+    payload
+  }));
 }
 function getTouchs(touchs) {
-  return Array.from(touchs !== null && touchs !== void 0 ? touchs : []).map(
-    item => ({
-      clientX: item.clientX,
-      clientY: item.clientY,
-      force: item.force,
-      identifier: item.identifier,
-      pageX: item.pageX,
-      pageY: item.pageY
-    })
-  );
+  return Array.from(touchs !== null && touchs !== void 0 ? touchs : []).map(item => ({
+    clientX: item.clientX,
+    clientY: item.clientY,
+    force: item.force,
+    identifier: item.identifier,
+    pageX: item.pageX,
+    pageY: item.pageY
+  }));
 }
 /**
  * 同步小程序事件参数
@@ -37,14 +33,9 @@ function createEvent(event) {
   const touches = getTouchs(event.touches);
   const changedTouches = getTouchs(event.changedTouches);
   const target = {
-    offsetLeft:
-      (_a = event.target) === null || _a === void 0 ? void 0 : _a.offsetLeft,
-    offsetTop:
-      (_b = event.target) === null || _b === void 0 ? void 0 : _b.offsetTop,
-    dataset: Object.assign(
-      {},
-      (_c = event.target) === null || _c === void 0 ? void 0 : _c.dataset
-    )
+    offsetLeft: (_a = event.target) === null || _a === void 0 ? void 0 : _a.offsetLeft,
+    offsetTop: (_b = event.target) === null || _b === void 0 ? void 0 : _b.offsetTop,
+    dataset: Object.assign({}, (_c = event.target) === null || _c === void 0 ? void 0 : _c.dataset)
   };
   return {
     type: event.type,
@@ -101,12 +92,8 @@ const BaseComponent = class {
     if (this.bindTouchend) {
       eventToNative(this.bindTouchend, createEvent(event));
     }
-    const startInfo =
-      (_a = this.touchStartInfo) !== null && _a !== void 0
-        ? _a
-        : { target: null, time: 0 };
-    const isLongTap =
-      startInfo.target === event.target && Date.now() > startInfo.time + 350;
+    const startInfo = (_a = this.touchStartInfo) !== null && _a !== void 0 ? _a : { target: null, time: 0 };
+    const isLongTap = startInfo.target === event.target && Date.now() > startInfo.time + 350;
     if (isLongTap) {
       if (this.catchLongpress) {
         event.stopPropagation();
@@ -129,7 +116,7 @@ const BaseComponent = class {
     }
   }
   render() {
-    return h(Host, null, h("slot", null));
+    return (h(Host, null, h("slot", null)));
   }
 };
 BaseComponent.style = baseComponentCss;

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8286F2E256E526A00598C7C /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8286F2C256E525600598C7C /* ZipArchive.framework */; platformFilter = ios; };
-		E8286F2F256E526A00598C7C /* ZipArchive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E8286F2C256E525600598C7C /* ZipArchive.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E845E3D5256FA9EF00129646 /* WoWNavBarStyleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E845E3D4256FA9EF00129646 /* WoWNavBarStyleProtocol.swift */; };
+		E84D576B2570CC050059D9F1 /* ZipArchive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D576A2570CC050059D9F1 /* ZipArchive.framework */; };
 		E85C9BD12553A99B000A03A7 /* WoWKitDependency.h in Headers */ = {isa = PBXBuildFile; fileRef = E85C9BCF2553A99B000A03A7 /* WoWKitDependency.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E85C9BD72553A9A5000A03A7 /* WoWConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B5F2553A371000A03A7 /* WoWConst.swift */; };
 		E85C9BDA2553A9AA000A03A7 /* WoWLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85C9B612553A371000A03A7 /* WoWLogger.swift */; };
@@ -75,13 +74,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E8286F30256E526A00598C7C /* Embed Frameworks */ = {
+		E84D572D2570C6330059D9F1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E8286F2F256E526A00598C7C /* ZipArchive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,8 +97,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E8286F2C256E525600598C7C /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZipArchive.framework; sourceTree = "<group>"; };
 		E845E3D4256FA9EF00129646 /* WoWNavBarStyleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWNavBarStyleProtocol.swift; sourceTree = "<group>"; };
+		E84D576A2570CC050059D9F1 /* ZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZipArchive.framework; sourceTree = "<group>"; };
+		E84D576F2570D4EB0059D9F1 /* ISSUE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ISSUE.md; sourceTree = "<group>"; };
 		E85C9B532553A2B1000A03A7 /* WoWKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WoWKit.h; sourceTree = "<group>"; };
 		E85C9B542553A2B1000A03A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85C9B5E2553A371000A03A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -201,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8286F2E256E526A00598C7C /* ZipArchive.framework in Frameworks */,
+				E84D576B2570CC050059D9F1 /* ZipArchive.framework in Frameworks */,
 				E8A3020A256380A100C4B387 /* ObjectMapper in Frameworks */,
 				E8A301872562502200C4B387 /* WoWKitDependency.framework in Frameworks */,
 			);
@@ -213,7 +212,7 @@
 		E8286F2B256E525600598C7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8286F2C256E525600598C7C /* ZipArchive.framework */,
+				E84D576A2570CC050059D9F1 /* ZipArchive.framework */,
 			);
 			name = Frameworks;
 			path = WoWKit/ServiceLayer/Frameworks;
@@ -230,6 +229,7 @@
 				E85C9B512553A2B1000A03A7 /* Products */,
 				E85C9BFC2553AA0E000A03A7 /* Frameworks */,
 			);
+			indentWidth = 5;
 			sourceTree = "<group>";
 		};
 		E85C9B512553A2B1000A03A7 /* Products */ = {
@@ -250,6 +250,7 @@
 				E85C9B912553A372000A03A7 /* ServiceLayer */,
 				E85C9B6F2553A371000A03A7 /* DisplayLayer */,
 				E85C9B5E2553A371000A03A7 /* README.md */,
+				E84D576F2570D4EB0059D9F1 /* ISSUE.md */,
 				E85C9B532553A2B1000A03A7 /* WoWKit.h */,
 				E85C9B542553A2B1000A03A7 /* Info.plist */,
 			);
@@ -664,7 +665,7 @@
 				E8A30161256248F600C4B387 /* Sources */,
 				E8A30162256248F600C4B387 /* Frameworks */,
 				E8A30163256248F600C4B387 /* Resources */,
-				E8286F30256E526A00598C7C /* Embed Frameworks */,
+				E84D572D2570C6330059D9F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -969,7 +970,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -995,7 +996,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1021,7 +1022,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1047,7 +1048,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1073,7 +1074,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1099,7 +1100,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1125,7 +1126,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1155,7 +1156,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = VRUDVDLSN7;
+				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

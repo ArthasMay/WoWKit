@@ -2,19 +2,7 @@ import { ComponentInterface } from "../../stencil-public-runtime";
 import { TouchTargetEvent } from "../../utils/utils";
 export declare class WxImage implements ComponentInterface {
   src: string;
-  mode:
-    | "scaleToFill"
-    | "aspectFit"
-    | "aspectFill"
-    | "top"
-    | "bottom"
-    | "left"
-    | "center"
-    | "right"
-    | "topLeft"
-    | "topRight"
-    | "bottomLeft"
-    | "bottomRight";
+  mode: "scaleToFill" | "aspectFit" | "aspectFill" | "top" | "bottom" | "left" | "center" | "right" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
   render(): any;
   /**
    * 通用事件

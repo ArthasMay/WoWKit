@@ -17,12 +17,10 @@ function invokeNative(type, payload) {
   if (!webkit) {
     return;
   }
-  webkit.messageHandlers.trigger.postMessage(
-    JSON.stringify({
-      type,
-      payload
-    })
-  );
+  webkit.messageHandlers.trigger.postMessage(JSON.stringify({
+    type,
+    payload
+  }));
 }
 function log(...messages) {
   invokeNative(0 /* log */, messages);
@@ -37,30 +35,23 @@ function eventToNative(bindFunctionName, payload) {
   });
 }
 function getTouchs(touchs) {
-  return Array.from(touchs !== null && touchs !== void 0 ? touchs : []).map(
-    item => ({
-      clientX: item.clientX,
-      clientY: item.clientY,
-      force: item.force,
-      identifier: item.identifier,
-      pageX: item.pageX,
-      pageY: item.pageY
-    })
-  );
+  return Array.from(touchs !== null && touchs !== void 0 ? touchs : []).map(item => ({
+    clientX: item.clientX,
+    clientY: item.clientY,
+    force: item.force,
+    identifier: item.identifier,
+    pageX: item.pageX,
+    pageY: item.pageY
+  }));
 }
 function createEvent(event) {
   var _a, _b, _c, _d, _e;
   const touches = getTouchs(event.touches);
   const changedTouches = getTouchs(event.changedTouches);
   const target = {
-    offsetLeft:
-      (_a = event.target) === null || _a === void 0 ? void 0 : _a.offsetLeft,
-    offsetTop:
-      (_b = event.target) === null || _b === void 0 ? void 0 : _b.offsetTop,
-    dataset: Object.assign(
-      {},
-      (_c = event.target) === null || _c === void 0 ? void 0 : _c.dataset
-    )
+    offsetLeft: (_a = event.target) === null || _a === void 0 ? void 0 : _a.offsetLeft,
+    offsetTop: (_b = event.target) === null || _b === void 0 ? void 0 : _b.offsetTop,
+    dataset: Object.assign({}, (_c = event.target) === null || _c === void 0 ? void 0 : _c.dataset)
   };
   return {
     type: event.type,
@@ -77,11 +68,4 @@ function createEvent(event) {
   };
 }
 
-export {
-  createEvent as c,
-  eventToNative as e,
-  format as f,
-  invokeNative as i,
-  log as l,
-  same as s
-};
+export { createEvent as c, eventToNative as e, format as f, invokeNative as i, log as l, same as s };

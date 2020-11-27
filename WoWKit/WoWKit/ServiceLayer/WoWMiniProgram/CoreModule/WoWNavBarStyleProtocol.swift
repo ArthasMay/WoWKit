@@ -31,7 +31,9 @@ extension WoWMiniWebViewController: WoWNavBarStyleProtocol {
         let titleBarH: Int = 32
         let titleBarW: Int = 87
         let titleBarImageView = UIImageView()
-        
+     
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         titleBarImageView.frame.size = CGSize(width: titleBarW, height: titleBarH)
         titleBarImageView.image = UIImage(named: "titlebar")
         

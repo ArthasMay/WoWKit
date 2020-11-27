@@ -1,8 +1,4 @@
-export declare function format(
-  first: string,
-  middle: string,
-  last: string
-): string;
+export declare function format(first: string, middle: string, last: string): string;
 export declare type TouchTargetEvent = {
   target: HTMLElement;
 } & TouchEvent;
@@ -12,18 +8,10 @@ export declare const enum InvokeNativeType {
   lifeCycle = 1,
   event = 2
 }
-export declare function invokeNative(
-  type: InvokeNativeType,
-  payload: any
-): void;
+export declare function invokeNative(type: InvokeNativeType, payload: any): void;
 export declare function log(...messages: any): void;
-export declare function eventToNative(
-  bindFunctionName: any,
-  payload: any
-): void;
-export declare function getTouchs(
-  touchs: TouchList
-): {
+export declare function eventToNative(bindFunctionName: any, payload: any): void;
+export declare function getTouchs(touchs: TouchList): {
   clientX: number;
   clientY: number;
   force: number;
@@ -31,9 +19,7 @@ export declare function getTouchs(
   pageX: number;
   pageY: number;
 }[];
-export declare function createEvent(
-  event: TouchTargetEvent
-): {
+export declare function createEvent(event: TouchTargetEvent): {
   type: string;
   timeStamp: number;
   detail: {

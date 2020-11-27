@@ -1,5 +1,5 @@
-import { r as registerInstance, h, e as Host } from "./index-86fbaafa.js";
-import { e as eventToNative, c as createEvent } from "./utils-41bad5d1.js";
+import { r as registerInstance, h, e as Host } from './index-86fbaafa.js';
+import { e as eventToNative, c as createEvent } from './utils-41bad5d1.js';
 
 const wxViewCss = ":host{display:block;font-size:0.28rem}";
 
@@ -8,7 +8,7 @@ const WxView = class {
     registerInstance(this, hostRef);
   }
   render() {
-    return h(Host, null, h("slot", null));
+    return (h(Host, null, h("slot", null)));
   }
   handlerTouchstart(event) {
     this.touchStartInfo = { target: event.target, time: Date.now() };
@@ -47,12 +47,8 @@ const WxView = class {
     if (this.bindTouchend) {
       eventToNative(this.bindTouchend, createEvent(event));
     }
-    const startInfo =
-      (_a = this.touchStartInfo) !== null && _a !== void 0
-        ? _a
-        : { target: null, time: 0 };
-    const isLongTap =
-      startInfo.target === event.target && Date.now() > startInfo.time + 350;
+    const startInfo = (_a = this.touchStartInfo) !== null && _a !== void 0 ? _a : { target: null, time: 0 };
+    const isLongTap = startInfo.target === event.target && Date.now() > startInfo.time + 350;
     if (isLongTap) {
       if (this.catchLongpress) {
         event.stopPropagation();

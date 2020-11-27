@@ -49,7 +49,7 @@ exports.compilerHtml = function(entryDir, appConfig, projectConfig) {
     let content = "";
     content += template.head;
     content += `<style>body { font-size: 0.24rem }\n${styleContent}</style>\n`;
-    content += `<script type="module" src="http://localhost:3333/build/runtime.esm.js"></script>\n`;
+    content += `<script type="module" src="http://10.253.36.19:3333/build/runtime.esm.js"></script>\n`;
     content += template.body;
     content += wxmlContent;
     content += template.foot;

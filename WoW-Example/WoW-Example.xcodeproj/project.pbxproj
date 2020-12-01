@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F324A0F77036D0E67EDEB88 /* libPods-WoW-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E771BF3C43CFE33E6B1B36CE /* libPods-WoW-Example.a */; };
 		E805559C253163F500FE33A4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E805559B253163F500FE33A4 /* RxSwift */; };
 		E805559E253163F500FE33A4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E805559D253163F500FE33A4 /* RxCocoa */; };
 		E84D56FB2570A7400059D9F1 /* WoWFastKV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D56F32570A7300059D9F1 /* WoWFastKV.framework */; };
@@ -58,12 +59,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		54C7E79EFE00F68044676B09 /* Pods-WoW-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW-Example.release.xcconfig"; path = "Target Support Files/Pods-WoW-Example/Pods-WoW-Example.release.xcconfig"; sourceTree = "<group>"; };
+		821A8AF87E8AE3EEC24EEA71 /* Pods-WoW-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoW-Example.debug.xcconfig"; path = "Target Support Files/Pods-WoW-Example/Pods-WoW-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E771BF3C43CFE33E6B1B36CE /* libPods-WoW-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WoW-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D56F32570A7300059D9F1 /* WoWFastKV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWFastKV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D56F52570A7300059D9F1 /* WoWHybridPageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWHybridPageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D56F72570A7300059D9F1 /* WoWKitDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWKitDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D56F92570A7300059D9F1 /* WoWMiniProgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WoWMiniProgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMiniProgramViewController.swift; sourceTree = "<group>"; };
 		E8719B54253E8C3D00F9543A /* TestFastKVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFastKVViewController.swift; sourceTree = "<group>"; };
+		E8771FC1257611A100432D91 /* WoW-Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WoW-Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		E88BBA6F2546CA3E005C9A64 /* TestWoWHPKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWoWHPKViewController.swift; sourceTree = "<group>"; };
 		E8B7B949253FDD0B0082BD87 /* TestKVCodableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKVCodableObject.swift; sourceTree = "<group>"; };
 		E8BE025625063D9C0093F7F6 /* WoW-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WoW-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +95,7 @@
 				E84D56FD2570A7410059D9F1 /* WoWHybridPageKit.framework in Frameworks */,
 				E84D56FB2570A7400059D9F1 /* WoWFastKV.framework in Frameworks */,
 				E84D57012570A7430059D9F1 /* WoWMiniProgram.framework in Frameworks */,
+				5F324A0F77036D0E67EDEB88 /* libPods-WoW-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,9 +109,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DE298985A90D77E606BE2C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				821A8AF87E8AE3EEC24EEA71 /* Pods-WoW-Example.debug.xcconfig */,
+				54C7E79EFE00F68044676B09 /* Pods-WoW-Example.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		E85C9B022552AF07000A03A7 /* WoWMiniKit-Example */ = {
 			isa = PBXGroup;
 			children = (
+				E8771FC1257611A100432D91 /* WoW-Example-Bridging-Header.h */,
 				E85C9B042552B29C000A03A7 /* TestMiniProgramViewController.swift */,
 			);
 			path = "WoWMiniKit-Example";
@@ -118,6 +135,7 @@
 				E84D56F52570A7300059D9F1 /* WoWHybridPageKit.framework */,
 				E84D56F72570A7300059D9F1 /* WoWKitDependency.framework */,
 				E84D56F92570A7300059D9F1 /* WoWMiniProgram.framework */,
+				E771BF3C43CFE33E6B1B36CE /* libPods-WoW-Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,6 +174,7 @@
 				E8BE026F25063D9D0093F7F6 /* WoW-ExampleUITests */,
 				E8BE025725063D9C0093F7F6 /* Products */,
 				E85C9BC02553A504000A03A7 /* Frameworks */,
+				5DE298985A90D77E606BE2C2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8BE027525063D9D0093F7F6 /* Build configuration list for PBXNativeTarget "WoW-Example" */;
 			buildPhases = (
+				98B26A68E5B5D3A76745A30C /* [CP] Check Pods Manifest.lock */,
 				E8BE025225063D9C0093F7F6 /* Sources */,
 				E8BE025325063D9C0093F7F6 /* Frameworks */,
 				E8BE025425063D9C0093F7F6 /* Resources */,
@@ -247,6 +267,7 @@
 				TargetAttributes = {
 					E8BE025525063D9C0093F7F6 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1220;
 					};
 					E8BE026B25063D9D0093F7F6 = {
 						CreatedOnToolsVersion = 11.7;
@@ -295,6 +316,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		98B26A68E5B5D3A76745A30C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WoW-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8BE025225063D9C0093F7F6 /* Sources */ = {
@@ -469,12 +515,19 @@
 		};
 		E8BE027625063D9D0093F7F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 821A8AF87E8AE3EEC24EEA71 /* Pods-WoW-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3U4KP2R7K;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GCDWebServer\"",
+				);
 				INFOPLIST_FILE = "WoW-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,6 +537,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arthasmay.www.WoW-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WoW-Example/Examples/WoWMiniKit-Example/WoW-Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -491,11 +546,18 @@
 		};
 		E8BE027725063D9D0093F7F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C7E79EFE00F68044676B09 /* Pods-WoW-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VRUDVDLSN7;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GCDWebServer\"",
+				);
 				INFOPLIST_FILE = "WoW-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,6 +566,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arthasmay.www.WoW-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WoW-Example/Examples/WoWMiniKit-Example/WoW-Example-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

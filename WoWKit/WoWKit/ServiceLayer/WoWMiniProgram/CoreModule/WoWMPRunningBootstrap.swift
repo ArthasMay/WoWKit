@@ -47,14 +47,20 @@ public class WoWMPRunningBootstrap {
     ///   - mppURL: MiniProgramPackageURL  小程序资源包地址
     public func run(_ appId: String, _ mppURL: URL) {
         self.appId = appId
+     
+        // 存在资源文件，直接启动
+        if fs.exists(file: mpDir) {
+            WoWMPEngineContext.shared.launchApp(appId: appId)
+            return
+        }
         
-        // 校验资源包的
+        // 本地没有资源包 下载 -> 解压
         download(mppURL) { (err, localURL) in
             if err != nil {
                 logger.error(err)
                 return
             }
-            
+          
             // 解压小程序
             do {
                 try SSZipArchive.unzipFile(atPath: localURL!.path, toDestination: WoWMPConfig.mpTempDir, overwrite: true, password: nil)

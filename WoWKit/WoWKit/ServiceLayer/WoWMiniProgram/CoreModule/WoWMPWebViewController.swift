@@ -107,7 +107,7 @@ class WoWMiniWebViewController: UIViewController {
     /// WebView 加载本地的HTML
     /// - Parameter htmlContent: html
     private func loadHTML(htmlContent: String) {
-        webView?.loadHTMLString(htmlContent, baseURL: URL(string: "http://localhost"))
+        webView?.loadHTMLString(htmlContent, baseURL: URL(string: "http://localhost:8080"))
         PageLifeCycle.onReady.load(appId: appId, webViewController: self)
     }
     
